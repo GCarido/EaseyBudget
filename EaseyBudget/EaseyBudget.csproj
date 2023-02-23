@@ -87,6 +87,18 @@
     <Compile Include="SignUp.Designer.cs">
       <DependentUpon>SignUp.cs</DependentUpon>
     </Compile>
+    <Compile Include="ViewExpense.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ViewExpense.Designer.cs">
+      <DependentUpon>ViewExpense.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewIncome.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ViewIncome.Designer.cs">
+      <DependentUpon>ViewIncome.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="CustomTextbox\RJTextBox.resx">
       <DependentUpon>RJTextBox.cs</DependentUpon>
     </EmbeddedResource>
@@ -114,6 +126,12 @@
     </Compile>
     <EmbeddedResource Include="SignUp.resx">
       <DependentUpon>SignUp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewExpense.resx">
+      <DependentUpon>ViewExpense.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewIncome.resx">
+      <DependentUpon>ViewIncome.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -187,6 +205,21 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\dawdaw.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\find.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\find1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\find2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\caltxt.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\text.gif" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

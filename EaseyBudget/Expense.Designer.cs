@@ -30,34 +30,34 @@
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.searchbtn = new System.Windows.Forms.Button();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.locoftrans = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.expcategory = new System.Windows.Forms.ComboBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.label18 = new System.Windows.Forms.Label();
+            this.gmappanel = new System.Windows.Forms.Panel();
+            this.googleweb = new System.Windows.Forms.WebBrowser();
             this.proceedbtn = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
-            this.panel1.SuspendLayout();
+            this.gmappanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(207)))), ((int)(((byte)(190)))));
             this.groupBox1.Controls.Add(this.searchbtn);
-            this.groupBox1.Controls.Add(this.textBox4);
+            this.groupBox1.Controls.Add(this.locoftrans);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.textBox3);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.textBox2);
             this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.comboBox1);
+            this.groupBox1.Controls.Add(this.expcategory);
             this.groupBox1.Controls.Add(this.textBox1);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label1);
@@ -80,14 +80,15 @@
             this.searchbtn.TabIndex = 10;
             this.searchbtn.Text = "Search";
             this.searchbtn.UseVisualStyleBackColor = false;
+            this.searchbtn.Click += new System.EventHandler(this.searchbtn_Click);
             // 
-            // textBox4
+            // locoftrans
             // 
-            this.textBox4.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox4.Location = new System.Drawing.Point(11, 272);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(264, 27);
-            this.textBox4.TabIndex = 9;
+            this.locoftrans.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.locoftrans.Location = new System.Drawing.Point(11, 272);
+            this.locoftrans.Name = "locoftrans";
+            this.locoftrans.Size = new System.Drawing.Size(264, 27);
+            this.locoftrans.TabIndex = 9;
             // 
             // label5
             // 
@@ -136,14 +137,24 @@
             this.label3.TabIndex = 4;
             this.label3.Text = "Expense Amount:";
             // 
-            // comboBox1
+            // expcategory
             // 
-            this.comboBox1.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(11, 128);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(216, 27);
-            this.comboBox1.TabIndex = 3;
+            this.expcategory.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.expcategory.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.expcategory.FormattingEnabled = true;
+            this.expcategory.Items.AddRange(new object[] {
+            "Clothing/Accessories",
+            "Housing",
+            "Transportation",
+            "Taxes",
+            "Debt payments",
+            "Insurance",
+            "Others"});
+            this.expcategory.Location = new System.Drawing.Point(11, 128);
+            this.expcategory.Name = "expcategory";
+            this.expcategory.Size = new System.Drawing.Size(216, 27);
+            this.expcategory.TabIndex = 3;
+            this.expcategory.SelectedIndexChanged += new System.EventHandler(this.expcategory_SelectedIndexChanged);
             // 
             // textBox1
             // 
@@ -173,23 +184,23 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Category Type";
             // 
-            // panel1
+            // gmappanel
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.panel1.Controls.Add(this.label18);
-            this.panel1.Location = new System.Drawing.Point(312, 8);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(480, 530);
-            this.panel1.TabIndex = 12;
+            this.gmappanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(236)))), ((int)(((byte)(227)))));
+            this.gmappanel.Controls.Add(this.googleweb);
+            this.gmappanel.Location = new System.Drawing.Point(312, 8);
+            this.gmappanel.Name = "gmappanel";
+            this.gmappanel.Size = new System.Drawing.Size(485, 530);
+            this.gmappanel.TabIndex = 12;
             // 
-            // label18
+            // googleweb
             // 
-            this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(184, 240);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(118, 13);
-            this.label18.TabIndex = 0;
-            this.label18.Text = "Google Map Integration";
+            this.googleweb.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.googleweb.Location = new System.Drawing.Point(0, 0);
+            this.googleweb.MinimumSize = new System.Drawing.Size(20, 20);
+            this.googleweb.Name = "googleweb";
+            this.googleweb.Size = new System.Drawing.Size(485, 530);
+            this.googleweb.TabIndex = 0;
             // 
             // proceedbtn
             // 
@@ -208,17 +219,16 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(236)))), ((int)(((byte)(227)))));
-            this.ClientSize = new System.Drawing.Size(804, 561);
+            this.ClientSize = new System.Drawing.Size(814, 561);
             this.Controls.Add(this.proceedbtn);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.gmappanel);
             this.Controls.Add(this.groupBox1);
             this.Name = "Expense";
             this.Text = "Expense";
             this.Load += new System.EventHandler(this.Expense_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.gmappanel.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -230,15 +240,15 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox expcategory;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button searchbtn;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox locoftrans;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.Panel gmappanel;
         private System.Windows.Forms.Button proceedbtn;
+        private System.Windows.Forms.WebBrowser googleweb;
     }
 }

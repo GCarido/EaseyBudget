@@ -29,12 +29,9 @@
         private void InitializeComponent()
         {
             this.paneldrg = new System.Windows.Forms.Panel();
-            this.exitbtn = new System.Windows.Forms.Button();
-            this.minbtn = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.formview = new System.Windows.Forms.Panel();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.label18 = new System.Windows.Forms.Label();
+            this.calendarnav = new System.Windows.Forms.Panel();
             this.expstat = new System.Windows.Forms.GroupBox();
             this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
@@ -59,15 +56,21 @@
             this.totalexp = new System.Windows.Forms.GroupBox();
             this.leftnav = new System.Windows.Forms.Panel();
             this.btnav = new System.Windows.Forms.Panel();
+            this.vincbtn = new System.Windows.Forms.Button();
+            this.vexpbtn = new System.Windows.Forms.Button();
             this.logoutbtn = new System.Windows.Forms.Button();
             this.incomebtn = new System.Windows.Forms.Button();
             this.expensebtn = new System.Windows.Forms.Button();
             this.dashbtn = new System.Windows.Forms.Button();
             this.logonav = new System.Windows.Forms.Panel();
+            this.calendar1 = new System.Windows.Forms.MonthCalendar();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.exitbtn = new System.Windows.Forms.Button();
+            this.minbtn = new System.Windows.Forms.Button();
             this.logo1 = new System.Windows.Forms.PictureBox();
             this.paneldrg.SuspendLayout();
             this.formview.SuspendLayout();
-            this.panel1.SuspendLayout();
+            this.calendarnav.SuspendLayout();
             this.expstat.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -75,6 +78,7 @@
             this.leftnav.SuspendLayout();
             this.btnav.SuspendLayout();
             this.logonav.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.logo1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -87,41 +91,9 @@
             this.paneldrg.Dock = System.Windows.Forms.DockStyle.Top;
             this.paneldrg.Location = new System.Drawing.Point(231, 0);
             this.paneldrg.Name = "paneldrg";
-            this.paneldrg.Size = new System.Drawing.Size(803, 52);
+            this.paneldrg.Size = new System.Drawing.Size(813, 52);
             this.paneldrg.TabIndex = 1;
             this.paneldrg.MouseDown += new System.Windows.Forms.MouseEventHandler(this.paneldrg_MouseDown);
-            // 
-            // exitbtn
-            // 
-            this.exitbtn.BackColor = System.Drawing.Color.Transparent;
-            this.exitbtn.BackgroundImage = global::EaseyBudget.Properties.Resources.exit1;
-            this.exitbtn.FlatAppearance.BorderSize = 0;
-            this.exitbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.exitbtn.Location = new System.Drawing.Point(772, 3);
-            this.exitbtn.Name = "exitbtn";
-            this.exitbtn.Size = new System.Drawing.Size(24, 24);
-            this.exitbtn.TabIndex = 3;
-            this.exitbtn.UseVisualStyleBackColor = false;
-            this.exitbtn.Click += new System.EventHandler(this.exitbtn_Click);
-            this.exitbtn.MouseEnter += new System.EventHandler(this.exitbtn_MouseEnter);
-            this.exitbtn.MouseLeave += new System.EventHandler(this.exitbtn_MouseLeave);
-            this.exitbtn.MouseHover += new System.EventHandler(this.exitbtn_MouseHover);
-            // 
-            // minbtn
-            // 
-            this.minbtn.BackColor = System.Drawing.Color.Transparent;
-            this.minbtn.BackgroundImage = global::EaseyBudget.Properties.Resources.min;
-            this.minbtn.FlatAppearance.BorderSize = 0;
-            this.minbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.minbtn.Location = new System.Drawing.Point(704, 3);
-            this.minbtn.Name = "minbtn";
-            this.minbtn.Size = new System.Drawing.Size(24, 24);
-            this.minbtn.TabIndex = 2;
-            this.minbtn.UseVisualStyleBackColor = false;
-            this.minbtn.Click += new System.EventHandler(this.minbtn_Click);
-            this.minbtn.MouseEnter += new System.EventHandler(this.minbtn_MouseEnter);
-            this.minbtn.MouseLeave += new System.EventHandler(this.minbtn_MouseLeave);
-            this.minbtn.MouseHover += new System.EventHandler(this.minbtn_MouseHover);
             // 
             // label1
             // 
@@ -138,7 +110,8 @@
             // formview
             // 
             this.formview.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(236)))), ((int)(((byte)(227)))));
-            this.formview.Controls.Add(this.panel1);
+            this.formview.Controls.Add(this.pictureBox1);
+            this.formview.Controls.Add(this.calendarnav);
             this.formview.Controls.Add(this.expstat);
             this.formview.Controls.Add(this.groupBox1);
             this.formview.Controls.Add(this.totalinc);
@@ -148,26 +121,17 @@
             this.formview.Dock = System.Windows.Forms.DockStyle.Fill;
             this.formview.Location = new System.Drawing.Point(231, 52);
             this.formview.Name = "formview";
-            this.formview.Size = new System.Drawing.Size(803, 569);
+            this.formview.Size = new System.Drawing.Size(813, 569);
             this.formview.TabIndex = 2;
             // 
-            // panel1
+            // calendarnav
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.panel1.Controls.Add(this.label18);
-            this.panel1.Location = new System.Drawing.Point(344, 6);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(453, 210);
-            this.panel1.TabIndex = 9;
-            // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(195, 96);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(73, 13);
-            this.label18.TabIndex = 0;
-            this.label18.Text = "Features TBD";
+            this.calendarnav.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.calendarnav.Controls.Add(this.calendar1);
+            this.calendarnav.Location = new System.Drawing.Point(344, 6);
+            this.calendarnav.Name = "calendarnav";
+            this.calendarnav.Size = new System.Drawing.Size(458, 162);
+            this.calendarnav.TabIndex = 9;
             // 
             // expstat
             // 
@@ -418,6 +382,8 @@
             // 
             // btnav
             // 
+            this.btnav.Controls.Add(this.vincbtn);
+            this.btnav.Controls.Add(this.vexpbtn);
             this.btnav.Controls.Add(this.logoutbtn);
             this.btnav.Controls.Add(this.incomebtn);
             this.btnav.Controls.Add(this.expensebtn);
@@ -427,6 +393,42 @@
             this.btnav.Name = "btnav";
             this.btnav.Size = new System.Drawing.Size(231, 461);
             this.btnav.TabIndex = 2;
+            // 
+            // vincbtn
+            // 
+            this.vincbtn.BackColor = System.Drawing.Color.Transparent;
+            this.vincbtn.Dock = System.Windows.Forms.DockStyle.Top;
+            this.vincbtn.FlatAppearance.BorderSize = 0;
+            this.vincbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.vincbtn.Font = new System.Drawing.Font("Rockwell", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.vincbtn.Location = new System.Drawing.Point(0, 260);
+            this.vincbtn.Name = "vincbtn";
+            this.vincbtn.Size = new System.Drawing.Size(231, 65);
+            this.vincbtn.TabIndex = 5;
+            this.vincbtn.Text = "View Income";
+            this.vincbtn.UseVisualStyleBackColor = false;
+            this.vincbtn.Click += new System.EventHandler(this.vincbtn_Click);
+            this.vincbtn.MouseEnter += new System.EventHandler(this.vincbtn_MouseEnter);
+            this.vincbtn.MouseLeave += new System.EventHandler(this.vincbtn_MouseLeave);
+            this.vincbtn.MouseHover += new System.EventHandler(this.vincbtn_MouseHover);
+            // 
+            // vexpbtn
+            // 
+            this.vexpbtn.BackColor = System.Drawing.Color.Transparent;
+            this.vexpbtn.Dock = System.Windows.Forms.DockStyle.Top;
+            this.vexpbtn.FlatAppearance.BorderSize = 0;
+            this.vexpbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.vexpbtn.Font = new System.Drawing.Font("Rockwell", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.vexpbtn.Location = new System.Drawing.Point(0, 195);
+            this.vexpbtn.Name = "vexpbtn";
+            this.vexpbtn.Size = new System.Drawing.Size(231, 65);
+            this.vexpbtn.TabIndex = 4;
+            this.vexpbtn.Text = "View Expense";
+            this.vexpbtn.UseVisualStyleBackColor = false;
+            this.vexpbtn.Click += new System.EventHandler(this.vexpbtn_Click);
+            this.vexpbtn.MouseEnter += new System.EventHandler(this.vexpbtn_MouseEnter);
+            this.vexpbtn.MouseLeave += new System.EventHandler(this.vexpbtn_MouseLeave);
+            this.vexpbtn.MouseHover += new System.EventHandler(this.vexpbtn_MouseHover);
             // 
             // logoutbtn
             // 
@@ -478,6 +480,7 @@
             this.expensebtn.Text = "Expense";
             this.expensebtn.UseVisualStyleBackColor = false;
             this.expensebtn.Click += new System.EventHandler(this.expensebtn_Click);
+            this.expensebtn.MouseDown += new System.Windows.Forms.MouseEventHandler(this.expensebtn_MouseDown);
             this.expensebtn.MouseEnter += new System.EventHandler(this.expensebtn_MouseEnter);
             this.expensebtn.MouseLeave += new System.EventHandler(this.expensebtn_MouseLeave);
             this.expensebtn.MouseHover += new System.EventHandler(this.expensebtn_MouseHover);
@@ -509,6 +512,56 @@
             this.logonav.Size = new System.Drawing.Size(231, 160);
             this.logonav.TabIndex = 0;
             // 
+            // calendar1
+            // 
+            this.calendar1.CalendarDimensions = new System.Drawing.Size(2, 1);
+            this.calendar1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.calendar1.Location = new System.Drawing.Point(0, 0);
+            this.calendar1.Name = "calendar1";
+            this.calendar1.ShowTodayCircle = false;
+            this.calendar1.TabIndex = 0;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::EaseyBudget.Properties.Resources.text;
+            this.pictureBox1.Location = new System.Drawing.Point(377, 175);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(387, 50);
+            this.pictureBox1.TabIndex = 10;
+            this.pictureBox1.TabStop = false;
+            // 
+            // exitbtn
+            // 
+            this.exitbtn.BackColor = System.Drawing.Color.Transparent;
+            this.exitbtn.BackgroundImage = global::EaseyBudget.Properties.Resources.exit1;
+            this.exitbtn.FlatAppearance.BorderSize = 0;
+            this.exitbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.exitbtn.Location = new System.Drawing.Point(772, 3);
+            this.exitbtn.Name = "exitbtn";
+            this.exitbtn.Size = new System.Drawing.Size(24, 24);
+            this.exitbtn.TabIndex = 3;
+            this.exitbtn.UseVisualStyleBackColor = false;
+            this.exitbtn.Click += new System.EventHandler(this.exitbtn_Click);
+            this.exitbtn.MouseEnter += new System.EventHandler(this.exitbtn_MouseEnter);
+            this.exitbtn.MouseLeave += new System.EventHandler(this.exitbtn_MouseLeave);
+            this.exitbtn.MouseHover += new System.EventHandler(this.exitbtn_MouseHover);
+            // 
+            // minbtn
+            // 
+            this.minbtn.BackColor = System.Drawing.Color.Transparent;
+            this.minbtn.BackgroundImage = global::EaseyBudget.Properties.Resources.min;
+            this.minbtn.FlatAppearance.BorderSize = 0;
+            this.minbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.minbtn.Location = new System.Drawing.Point(704, 3);
+            this.minbtn.Name = "minbtn";
+            this.minbtn.Size = new System.Drawing.Size(24, 24);
+            this.minbtn.TabIndex = 2;
+            this.minbtn.UseVisualStyleBackColor = false;
+            this.minbtn.Click += new System.EventHandler(this.minbtn_Click);
+            this.minbtn.MouseEnter += new System.EventHandler(this.minbtn_MouseEnter);
+            this.minbtn.MouseLeave += new System.EventHandler(this.minbtn_MouseLeave);
+            this.minbtn.MouseHover += new System.EventHandler(this.minbtn_MouseHover);
+            // 
             // logo1
             // 
             this.logo1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -525,7 +578,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(209)))), ((int)(((byte)(233)))));
-            this.ClientSize = new System.Drawing.Size(1034, 621);
+            this.ClientSize = new System.Drawing.Size(1044, 621);
             this.Controls.Add(this.formview);
             this.Controls.Add(this.paneldrg);
             this.Controls.Add(this.leftnav);
@@ -537,8 +590,7 @@
             this.paneldrg.ResumeLayout(false);
             this.paneldrg.PerformLayout();
             this.formview.ResumeLayout(false);
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.calendarnav.ResumeLayout(false);
             this.expstat.ResumeLayout(false);
             this.expstat.PerformLayout();
             this.groupBox1.ResumeLayout(false);
@@ -550,6 +602,7 @@
             this.leftnav.ResumeLayout(false);
             this.btnav.ResumeLayout(false);
             this.logonav.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.logo1)).EndInit();
             this.ResumeLayout(false);
 
@@ -592,7 +645,10 @@
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.Panel calendarnav;
+        private System.Windows.Forms.Button vincbtn;
+        private System.Windows.Forms.Button vexpbtn;
+        private System.Windows.Forms.MonthCalendar calendar1;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

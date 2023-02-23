@@ -9,10 +9,12 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
 
+
 namespace EaseyBudget
 {
     public partial class Dashboard : Form
     {
+
         public Dashboard()
         {
             InitializeComponent();
@@ -26,6 +28,7 @@ namespace EaseyBudget
         private void Dashboard_Load(object sender, EventArgs e)
         {
             this.ControlBox = false;
+           
         }
 
         private void Dashboard_FormClosed(object sender, FormClosedEventArgs e)
@@ -105,14 +108,14 @@ namespace EaseyBudget
 
         private void expensebtn_MouseEnter(object sender, EventArgs e)
         {
-            expensebtn.BackColor = Color.FromArgb(240, 209, 175);
-            expensebtn.Font = new Font(expensebtn.Font, FontStyle.Bold);
+           expensebtn.BackColor = Color.FromArgb(240, 209, 175);
+           expensebtn.Font = new Font(expensebtn.Font, FontStyle.Bold);
         }
 
         private void expensebtn_MouseHover(object sender, EventArgs e)
         {
-            expensebtn.BackColor = Color.FromArgb(240, 209, 175);
-            expensebtn.Font = new Font(expensebtn.Font, FontStyle.Bold);
+           expensebtn.BackColor = Color.FromArgb(240, 209, 175);
+           expensebtn.Font = new Font(expensebtn.Font, FontStyle.Bold);
         }
 
         private void expensebtn_MouseLeave(object sender, EventArgs e)
@@ -205,5 +208,75 @@ namespace EaseyBudget
         {
 
         }
+
+        private void vexpbtn_MouseEnter(object sender, EventArgs e)
+        {
+            vexpbtn.BackColor = Color.FromArgb(240, 209, 175);
+            vexpbtn.Font = new Font(logoutbtn.Font, FontStyle.Bold);
+        }
+
+        private void vexpbtn_MouseHover(object sender, EventArgs e)
+        {
+            vexpbtn.BackColor = Color.FromArgb(240, 209, 175);
+            vexpbtn.Font = new Font(logoutbtn.Font, FontStyle.Bold);
+        }
+
+        private void vexpbtn_MouseLeave(object sender, EventArgs e)
+        {
+            vexpbtn.BackColor = Color.Transparent;
+            vexpbtn.Font = new Font(logoutbtn.Font, FontStyle.Regular);
+        }
+
+        private void vincbtn_MouseEnter(object sender, EventArgs e)
+        {
+            vincbtn.BackColor = Color.FromArgb(240, 209, 175);
+            vincbtn.Font = new Font(logoutbtn.Font, FontStyle.Bold);
+        }
+
+        private void vincbtn_MouseHover(object sender, EventArgs e)
+        {
+            vincbtn.BackColor = Color.FromArgb(240, 209, 175);
+            vincbtn.Font = new Font(logoutbtn.Font, FontStyle.Bold);
+        }
+
+        private void vincbtn_MouseLeave(object sender, EventArgs e)
+        {
+           vincbtn.BackColor = Color.Transparent;
+           vincbtn.Font = new Font(logoutbtn.Font, FontStyle.Regular);
+        }
+
+        private void vexpbtn_Click(object sender, EventArgs e)
+        {
+            ViewExpense vexp = new ViewExpense();
+            vexp.TopLevel = false;
+            formview.Controls.Add(vexp);
+            vexp.Dock = DockStyle.Fill;
+            vexp.BringToFront();
+            vexp.Show();
+            vexp.FormBorderStyle = FormBorderStyle.None;
+        }
+
+        private void vincbtn_Click(object sender, EventArgs e)
+        {
+            ViewIncome vinc = new ViewIncome();
+            vinc.TopLevel = false;
+            formview.Controls.Add(vinc);
+            vinc.Dock = DockStyle.Fill;
+            vinc.BringToFront();
+            vinc.Show();
+            vinc.FormBorderStyle = FormBorderStyle.None;
+        }
+
+        private void expensebtn_MouseDown(object sender, MouseEventArgs e)
+        {
+            expensebtn.BackColor = Color.FromArgb(73, 138, 247);
+        }
+
+        private void calendarbrowse_DocumentCompleted(object sender, WebBrowserDocumentCompletedEventArgs e)
+        {
+           
+
+        }
+
     }
 }
