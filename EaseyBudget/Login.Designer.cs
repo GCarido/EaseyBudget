@@ -248,6 +248,7 @@
             this.passtxt.TabIndex = 1;
             this.passtxt.Texts = "";
             this.passtxt.UnderlinedStyle = false;
+            this.passtxt.KeyDown += new System.Windows.Forms.KeyEventHandler(this.passtxt_KeyDown);
             this.passtxt.MouseClick += new System.Windows.Forms.MouseEventHandler(this.passtxt_MouseClick);
             // 
             // usertxt

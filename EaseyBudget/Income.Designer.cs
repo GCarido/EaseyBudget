@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.gmappanel = new System.Windows.Forms.Panel();
+            this.googleweb = new System.Windows.Forms.WebBrowser();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.proceedbtn = new System.Windows.Forms.Button();
             this.searchbtn = new System.Windows.Forms.Button();
@@ -42,19 +43,30 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.googleweb = new System.Windows.Forms.WebBrowser();
+            this.gmapbg1 = new System.Windows.Forms.PictureBox();
             this.gmappanel.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gmapbg1)).BeginInit();
             this.SuspendLayout();
             // 
             // gmappanel
             // 
             this.gmappanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(236)))), ((int)(((byte)(227)))));
+            this.gmappanel.Controls.Add(this.gmapbg1);
             this.gmappanel.Controls.Add(this.googleweb);
             this.gmappanel.Location = new System.Drawing.Point(312, 8);
             this.gmappanel.Name = "gmappanel";
             this.gmappanel.Size = new System.Drawing.Size(485, 530);
             this.gmappanel.TabIndex = 14;
+            // 
+            // googleweb
+            // 
+            this.googleweb.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.googleweb.Location = new System.Drawing.Point(0, 0);
+            this.googleweb.MinimumSize = new System.Drawing.Size(20, 20);
+            this.googleweb.Name = "googleweb";
+            this.googleweb.Size = new System.Drawing.Size(485, 530);
+            this.googleweb.TabIndex = 0;
             // 
             // groupBox1
             // 
@@ -206,14 +218,16 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Category Type";
             // 
-            // googleweb
+            // gmapbg1
             // 
-            this.googleweb.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.googleweb.Location = new System.Drawing.Point(0, 0);
-            this.googleweb.MinimumSize = new System.Drawing.Size(20, 20);
-            this.googleweb.Name = "googleweb";
-            this.googleweb.Size = new System.Drawing.Size(485, 530);
-            this.googleweb.TabIndex = 0;
+            this.gmapbg1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gmapbg1.Image = global::EaseyBudget.Properties.Resources._1200x630wa1;
+            this.gmapbg1.Location = new System.Drawing.Point(0, 0);
+            this.gmapbg1.Name = "gmapbg1";
+            this.gmapbg1.Size = new System.Drawing.Size(485, 530);
+            this.gmapbg1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.gmapbg1.TabIndex = 1;
+            this.gmapbg1.TabStop = false;
             // 
             // Income
             // 
@@ -228,6 +242,7 @@
             this.gmappanel.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gmapbg1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -249,5 +264,6 @@
         private System.Windows.Forms.Button searchbtn;
         private System.Windows.Forms.Button proceedbtn;
         private System.Windows.Forms.WebBrowser googleweb;
+        private System.Windows.Forms.PictureBox gmapbg1;
     }
 }

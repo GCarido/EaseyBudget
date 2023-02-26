@@ -27,7 +27,7 @@ namespace EaseyBudget
         {
             try
             {
-
+                gmapbg1.SendToBack();
                 googleweb.ScriptErrorsSuppressed = true;
                 googleweb.Navigate("about:blank");
 

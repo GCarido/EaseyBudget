@@ -43,8 +43,10 @@
             this.gmappanel = new System.Windows.Forms.Panel();
             this.googleweb = new System.Windows.Forms.WebBrowser();
             this.proceedbtn = new System.Windows.Forms.Button();
+            this.gmapbg = new System.Windows.Forms.PictureBox();
             this.groupBox1.SuspendLayout();
             this.gmappanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gmapbg)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -187,6 +189,7 @@
             // gmappanel
             // 
             this.gmappanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(236)))), ((int)(((byte)(227)))));
+            this.gmappanel.Controls.Add(this.gmapbg);
             this.gmappanel.Controls.Add(this.googleweb);
             this.gmappanel.Location = new System.Drawing.Point(312, 8);
             this.gmappanel.Name = "gmappanel";
@@ -214,6 +217,17 @@
             this.proceedbtn.Text = "Proceed";
             this.proceedbtn.UseVisualStyleBackColor = false;
             // 
+            // gmapbg
+            // 
+            this.gmapbg.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gmapbg.Image = global::EaseyBudget.Properties.Resources._1200x630wa;
+            this.gmapbg.Location = new System.Drawing.Point(0, 0);
+            this.gmapbg.Name = "gmapbg";
+            this.gmapbg.Size = new System.Drawing.Size(485, 530);
+            this.gmapbg.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.gmapbg.TabIndex = 1;
+            this.gmapbg.TabStop = false;
+            // 
             // Expense
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -229,6 +243,7 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.gmappanel.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.gmapbg)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -250,5 +265,6 @@
         private System.Windows.Forms.Panel gmappanel;
         private System.Windows.Forms.Button proceedbtn;
         private System.Windows.Forms.WebBrowser googleweb;
+        private System.Windows.Forms.PictureBox gmapbg;
     }
 }

@@ -31,6 +31,7 @@ namespace EaseyBudget
         private void Login_Load(object sender, EventArgs e)
         {
             this.ControlBox = false;
+            this.AcceptButton = loginbtn;
         }
 
         private void paneldrg_MouseDown(object sender, MouseEventArgs e)
@@ -154,6 +155,11 @@ namespace EaseyBudget
 
         private void passtxt_MouseClick(object sender, MouseEventArgs e)
         {
+        }
+
+        private void passtxt_KeyDown(object sender, KeyEventArgs e)
+        {
+           
         }
     }
 }

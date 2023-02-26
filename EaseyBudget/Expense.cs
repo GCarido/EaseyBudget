@@ -33,7 +33,7 @@ namespace EaseyBudget
         {
             try
             {
-
+                gmapbg.SendToBack();
                 googleweb.ScriptErrorsSuppressed = true;
                 googleweb.Navigate("about:blank");
 
