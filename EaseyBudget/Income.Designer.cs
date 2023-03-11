@@ -29,24 +29,24 @@
         private void InitializeComponent()
         {
             this.gmappanel = new System.Windows.Forms.Panel();
+            this.gmapbg1 = new System.Windows.Forms.PictureBox();
             this.googleweb = new System.Windows.Forms.WebBrowser();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.proceedbtn = new System.Windows.Forms.Button();
             this.searchbtn = new System.Windows.Forms.Button();
             this.locoftrans = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.detailstxt = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.amountxt = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.incategory = new System.Windows.Forms.ComboBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.nametxt = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.gmapbg1 = new System.Windows.Forms.PictureBox();
             this.gmappanel.SuspendLayout();
-            this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gmapbg1)).BeginInit();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // gmappanel
@@ -58,6 +58,17 @@
             this.gmappanel.Name = "gmappanel";
             this.gmappanel.Size = new System.Drawing.Size(485, 530);
             this.gmappanel.TabIndex = 14;
+            // 
+            // gmapbg1
+            // 
+            this.gmapbg1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gmapbg1.Image = global::EaseyBudget.Properties.Resources._1200x630wa1;
+            this.gmapbg1.Location = new System.Drawing.Point(0, 0);
+            this.gmapbg1.Name = "gmapbg1";
+            this.gmapbg1.Size = new System.Drawing.Size(485, 530);
+            this.gmapbg1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.gmapbg1.TabIndex = 1;
+            this.gmapbg1.TabStop = false;
             // 
             // googleweb
             // 
@@ -75,12 +86,12 @@
             this.groupBox1.Controls.Add(this.searchbtn);
             this.groupBox1.Controls.Add(this.locoftrans);
             this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.Controls.Add(this.textBox3);
+            this.groupBox1.Controls.Add(this.detailstxt);
             this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.textBox2);
+            this.groupBox1.Controls.Add(this.amountxt);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.incategory);
-            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.nametxt);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -102,6 +113,7 @@
             this.proceedbtn.TabIndex = 12;
             this.proceedbtn.Text = "Proceed";
             this.proceedbtn.UseVisualStyleBackColor = false;
+            this.proceedbtn.Click += new System.EventHandler(this.proceedbtn_Click);
             // 
             // searchbtn
             // 
@@ -134,14 +146,14 @@
             this.label5.TabIndex = 8;
             this.label5.Text = "Location of Transaction:";
             // 
-            // textBox3
+            // detailstxt
             // 
-            this.textBox3.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.Location = new System.Drawing.Point(11, 376);
-            this.textBox3.Multiline = true;
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(264, 112);
-            this.textBox3.TabIndex = 7;
+            this.detailstxt.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.detailstxt.Location = new System.Drawing.Point(11, 376);
+            this.detailstxt.Multiline = true;
+            this.detailstxt.Name = "detailstxt";
+            this.detailstxt.Size = new System.Drawing.Size(264, 112);
+            this.detailstxt.TabIndex = 7;
             // 
             // label4
             // 
@@ -153,13 +165,14 @@
             this.label4.TabIndex = 6;
             this.label4.Text = "Additional Details";
             // 
-            // textBox2
+            // amountxt
             // 
-            this.textBox2.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(11, 200);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(136, 27);
-            this.textBox2.TabIndex = 5;
+            this.amountxt.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.amountxt.Location = new System.Drawing.Point(11, 200);
+            this.amountxt.Name = "amountxt";
+            this.amountxt.Size = new System.Drawing.Size(179, 27);
+            this.amountxt.TabIndex = 5;
+            this.amountxt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.amountxt_KeyPress);
             // 
             // label3
             // 
@@ -190,13 +203,13 @@
             this.incategory.TabIndex = 3;
             this.incategory.SelectedIndexChanged += new System.EventHandler(this.incategory_SelectedIndexChanged);
             // 
-            // textBox1
+            // nametxt
             // 
-            this.textBox1.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(11, 56);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(216, 27);
-            this.textBox1.TabIndex = 2;
+            this.nametxt.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nametxt.Location = new System.Drawing.Point(11, 56);
+            this.nametxt.Name = "nametxt";
+            this.nametxt.Size = new System.Drawing.Size(216, 27);
+            this.nametxt.TabIndex = 2;
             // 
             // label2
             // 
@@ -218,17 +231,6 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Category Type";
             // 
-            // gmapbg1
-            // 
-            this.gmapbg1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gmapbg1.Image = global::EaseyBudget.Properties.Resources._1200x630wa1;
-            this.gmapbg1.Location = new System.Drawing.Point(0, 0);
-            this.gmapbg1.Name = "gmapbg1";
-            this.gmapbg1.Size = new System.Drawing.Size(485, 530);
-            this.gmapbg1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.gmapbg1.TabIndex = 1;
-            this.gmapbg1.TabStop = false;
-            // 
             // Income
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -240,9 +242,9 @@
             this.Name = "Income";
             this.Text = "Income";
             this.gmappanel.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.gmapbg1)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gmapbg1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -253,12 +255,12 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.TextBox locoftrans;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox detailstxt;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox amountxt;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ComboBox incategory;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox nametxt;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button searchbtn;

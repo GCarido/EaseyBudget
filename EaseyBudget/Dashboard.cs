@@ -28,7 +28,16 @@ namespace EaseyBudget
         private void Dashboard_Load(object sender, EventArgs e)
         {
             this.ControlBox = false;
-           
+
+            newsweb.ScriptErrorsSuppressed = true;
+            newsweb.Navigate("https://news.abs-cbn.com/");
+            eventsweb.ScriptErrorsSuppressed = true;
+            eventsweb.Navigate("https://publicholidays.ph/2023-dates/");
+
+            lexpam.Text = Expense.AmountText;
+            lexpdate.Text = Expense.DateText;
+            lincam.Text = Income.AmountText;
+            lincdate.Text = Income.DateText;
         }
 
         private void Dashboard_FormClosed(object sender, FormClosedEventArgs e)
@@ -278,5 +287,34 @@ namespace EaseyBudget
 
         }
 
+        private void newsweb_DocumentCompleted(object sender, WebBrowserDocumentCompletedEventArgs e)
+        {
+
+        }
+
+        private void eventscb_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            newsweb.ScriptErrorsSuppressed = true;
+            if (newscb.SelectedItem == "ABS-CBN News")
+            {
+                newsweb.Navigate("https://news.abs-cbn.com/");
+            }
+            else if (newscb.SelectedItem == "GMA News Online")
+            {
+                newsweb.Navigate("https://www.gmanetwork.com/news/");
+            }
+            else if (newscb.SelectedItem == "Manila Bulletin")
+            {
+                newsweb.Navigate("https://mb.com.ph/");
+            }
+            else if (newscb.SelectedItem == "CNN Philippines")
+            {
+                newsweb.Navigate("https://www.cnnphilippines.com/");
+            }
+            else if (newscb.SelectedItem == "The Philippine Star")
+            {
+                newsweb.Navigate("https://www.philstar.com/");
+            }
+        }
     }
 }
