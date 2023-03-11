@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
+using MySql.Data.MySqlClient;
 
 namespace EaseyBudget
 {
@@ -15,6 +16,11 @@ namespace EaseyBudget
     {
         public static string Username { get; set; }
         public static string Password { get; set; }
+
+        public string mySqlServerName = "127.0.0.1";
+        public string mySqlServerUserId = "root";
+        public string mySqlServerPassword = "Admin1234-";
+        public string mySqlDatabaseName = "users_record";
 
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
         private extern static void ReleaseCapture();
@@ -25,8 +31,6 @@ namespace EaseyBudget
         {
             InitializeComponent();
         }
-        string user = "user";
-        string pass = "2314";
 
         private void Login_Load(object sender, EventArgs e)
         {
@@ -132,25 +136,45 @@ namespace EaseyBudget
 
         private void loginbtn_Click(object sender, EventArgs e)
         {
-            if (usertxt.Texts == user && passtxt.Texts == pass)
+            int user_id;
+            string user = "", pass = "";
+
+            string connectionString = $"server={this.mySqlServerName};user id={this.mySqlServerUserId};password={this.mySqlServerPassword};database={this.mySqlDatabaseName}";
+            string query = $"SELECT * FROM users_table WHERE username='{this.usertxt.Texts}'";
+            MySqlConnection connection = new MySqlConnection(connectionString);
+            connection.Open();
+
+            MySqlCommand command = new MySqlCommand(query, connection);
+
+            MySqlDataReader dataReader = command.ExecuteReader();
+            if(dataReader.Read())
             {
-                Username = usertxt.Texts;
-                Password = passtxt.Texts;
-                this.Hide();
-                Dashboard dashb = new Dashboard();
-                dashb.Show();
+                user_id = Convert.ToInt32(dataReader["user_id"]);
+                user = dataReader["username"].ToString();
+                pass = dataReader["user_password"].ToString();
+                connection.Close();
+                if (usertxt.Texts == user && passtxt.Texts == pass)
+                {
+                    Username = usertxt.Texts;
+                    Password = passtxt.Texts;
+                    this.Hide();
+                    Dashboard dashb = new Dashboard();
+                    dashb.Show();
+                }
+                else
+                {
+                    MessageBox.Show("The password you have entered is incorrect. " +
+                        "Please try again.", "Notice", MessageBoxButtons.OK,
+                        MessageBoxIcon.Hand);
+                }
             }
             else if (usertxt.Texts == "" || passtxt.Texts == "")
             {
                 MessageBox.Show("Incomplete Field Entry", "Notice",
                     MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-            else
-            {
-                MessageBox.Show("The password you have entered is incorrect. " +
-                    "Please try again.", "Notice", MessageBoxButtons.OK,
-                    MessageBoxIcon.Hand);
-            }
+            connection.Close();
+            
         }
 
         private void passtxt_MouseClick(object sender, MouseEventArgs e)
