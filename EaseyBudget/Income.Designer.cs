@@ -241,6 +241,7 @@
             this.Controls.Add(this.groupBox1);
             this.Name = "Income";
             this.Text = "Income";
+            this.Load += new System.EventHandler(this.Income_Load);
             this.gmappanel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gmapbg1)).EndInit();
             this.groupBox1.ResumeLayout(false);

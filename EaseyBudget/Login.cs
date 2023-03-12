@@ -140,6 +140,8 @@ namespace EaseyBudget
             string user = "", pass = "";
 
             string connectionString = $"server={this.mySqlServerName};user id={this.mySqlServerUserId};password={this.mySqlServerPassword};database={this.mySqlDatabaseName}";
+            /* string query = $"SELECT * FROM users_table"; */
+            /* string query = $"SELECT * FROM users_table WHERE username='{this.usertxt.Texts}' AND user_password='{this.passtxt.Texts}'"; */
             string query = $"SELECT * FROM users_table WHERE username='{this.usertxt.Texts}'";
             MySqlConnection connection = new MySqlConnection(connectionString);
             connection.Open();
@@ -147,31 +149,40 @@ namespace EaseyBudget
             MySqlCommand command = new MySqlCommand(query, connection);
 
             MySqlDataReader dataReader = command.ExecuteReader();
-            if(dataReader.Read())
+           
+            if (usertxt.Texts == "" || passtxt.Texts == "")
+            {
+                MessageBox.Show("Incomplete Field Entry", "Notice",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            if (dataReader.Read())
             {
                 user_id = Convert.ToInt32(dataReader["user_id"]);
                 user = dataReader["username"].ToString();
                 pass = dataReader["user_password"].ToString();
-                connection.Close();
-                if (usertxt.Texts == user && passtxt.Texts == pass)
+                
+                if (usertxt.Texts.ToLower() == user && passtxt.Texts == pass)
                 {
-                    Username = usertxt.Texts;
+                    Username = usertxt.Texts.ToLower();
                     Password = passtxt.Texts;
                     this.Hide();
                     Dashboard dashb = new Dashboard();
                     dashb.Show();
                 }
+            
                 else
                 {
-                    MessageBox.Show("The password you have entered is incorrect. " +
+                    MessageBox.Show("Username or password you have entered is incorrect. " +
                         "Please try again.", "Notice", MessageBoxButtons.OK,
                         MessageBoxIcon.Hand);
-                }
+                } 
+
             }
-            else if (usertxt.Texts == "" || passtxt.Texts == "")
+            else
             {
-                MessageBox.Show("Incomplete Field Entry", "Notice",
-                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Username or password you have entered is incorrect. " +
+                                       "Please try again.", "Notice", MessageBoxButtons.OK,
+                                       MessageBoxIcon.Hand);
             }
             connection.Close();
             

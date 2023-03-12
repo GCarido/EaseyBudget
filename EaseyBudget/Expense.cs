@@ -23,7 +23,7 @@ namespace EaseyBudget
 
         private void Expense_Load(object sender, EventArgs e)
         {
-
+            this.AcceptButton = proceedbtn;
         }
 
         private void expcategory_SelectedIndexChanged(object sender, EventArgs e)
@@ -74,15 +74,18 @@ namespace EaseyBudget
                 MessageBox.Show("Name of Expense, Category, and Expense Amount must be completely filled up.", "NOTICE", MessageBoxButtons.OK, MessageBoxIcon.Information);
             else
             {
-                amount = double.Parse(amountxt.Text);
-                AmountText = ($"Php {amount.ToString("N2")}");
-                mm = DateTime.Now.ToString("MM");
-                dd = DateTime.Now.ToString("dd");
-                yy = DateTime.Now.ToString("yyyy");
-                DateText = ($"{mm}-{dd}-{yy}");
-                MessageBox.Show("Information entered successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
-                expcategory.SelectedIndex = -1; // sets the selected index to -1 (i.e. no selection)
-                amountxt.Text = location = details = nametxt.Text = "";
+                if (MessageBox.Show("Do you want to continue?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    amount = double.Parse(amountxt.Text);
+                    AmountText = ($"Php {amount.ToString("N2")}");
+                    mm = DateTime.Now.ToString("MM");
+                    dd = DateTime.Now.ToString("dd");
+                    yy = DateTime.Now.ToString("yyyy");
+                    DateText = ($"{mm}-{dd}-{yy}");
+                    MessageBox.Show("Information entered successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                    expcategory.SelectedIndex = -1; 
+                    amountxt.Text = location = details = nametxt.Text = "";
+                }
             }
 
         }
