@@ -155,7 +155,7 @@ namespace EaseyBudget
                 MessageBox.Show("Incomplete Field Entry", "Notice",
                     MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-            if (dataReader.Read())
+            else if (dataReader.Read())
             {
                 user_id = Convert.ToInt32(dataReader["user_id"]);
                 user = dataReader["username"].ToString();
