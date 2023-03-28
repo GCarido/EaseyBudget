@@ -7,11 +7,40 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MySql.Data.MySqlClient;
 
 namespace EaseyBudget
 {
     public partial class ViewExpense : Form
     {
+        string dataInfo = "server=localhost;"
+                        + "password=Admin1234-;"
+                        + "user=root;"
+                        + "database=expenserec;"
+                        + "port=3306;";
+
+        MySqlConnection Sqlcon = new MySqlConnection();
+        MySqlCommand Sqlcmd = new MySqlCommand();
+        DataTable sqldt = new DataTable();
+        String sqlQuery;
+        MySqlDataAdapter sqldta = new MySqlDataAdapter();
+        MySqlDataReader sqlrd;
+        DataSet ds = new DataSet();
+
+        private void UploadData()
+        {
+           
+           Sqlcon.ConnectionString = dataInfo;
+           Sqlcon.Open();
+           Sqlcmd.Connection = Sqlcon;
+           Sqlcmd.CommandText = ($"SELECT * FROM expenserec.expenset WHERE username = '{Login.Username}';");
+           sqlrd = Sqlcmd.ExecuteReader();
+           sqldt.Load(sqlrd);
+           sqlrd.Close();
+           Sqlcon.Close();
+           dgv1.DataSource = sqldt;
+        }
+
         public ViewExpense()
         {
             InitializeComponent();
@@ -37,7 +66,40 @@ namespace EaseyBudget
 
         private void searchbtn_Click(object sender, EventArgs e)
         {
+            try
+            {
+            
+                Sqlcon.ConnectionString = dataInfo;
+                Sqlcon.Open();
+              
+                using (DataTable dtable = new DataTable("Expense_Name"))
+                {
+                 
+                    using (MySqlCommand cmd = new MySqlCommand("SELECT * FROM expenserec.expenset WHERE (Expense_Name LIKE @Expense_Name OR Expense_Amount LIKE @Expense_Amount OR Transaction_Location LIKE @Transaction_Location OR Add_Details LIKE @Add_Details OR Date_Recorded LIKE @Date_Recorded) AND username = @username;", Sqlcon))
+                    {
+                        cmd.Parameters.AddWithValue("username", Login.Username);
+                        cmd.Parameters.AddWithValue("Expense_Name", string.Format("%{0}%",
+                            searchbox.Text));
+                        cmd.Parameters.AddWithValue("Expense_Amount", string.Format("%{0}%",
+                           searchbox.Text));
+                        cmd.Parameters.AddWithValue("Transaction_Location", string.Format("%{0}%",
+                            searchbox.Text));
+                        cmd.Parameters.AddWithValue("Add_Details", string.Format("%{0}%",
+                            searchbox.Text));
+                        cmd.Parameters.AddWithValue("Date_Recorded", string.Format("%{0}%",
+                            searchbox.Text));
+                        MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
+                        adapter.Fill(dtable);
+                        dgv1.DataSource = dtable;
+                    }
+                    Sqlcon.Close();
+                }
 
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void searchbtn2_MouseEnter(object sender, EventArgs e)
@@ -83,6 +145,58 @@ namespace EaseyBudget
         private void ViewExpense_Load(object sender, EventArgs e)
         {
             timer.Start();
+            UploadData();
+        }
+
+        private void dgv1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+
+                select.Text = dgv1.SelectedRows[0].Cells[0].Value.ToString();
+                Expense.NameofExpense1 = dgv1.SelectedRows[0].Cells[2].Value.ToString();
+                Expense.CategoryExpense1 = dgv1.SelectedRows[0].Cells[3].Value.ToString();
+                Expense.AmountExpense1 = dgv1.SelectedRows[0].Cells[4].Value.ToString();
+                Expense.LocationExpense1 = dgv1.SelectedRows[0].Cells[5].Value.ToString();
+                Expense.DetailsExpense1 = dgv1.SelectedRows[0].Cells[6].Value.ToString();
+       
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Please Select the left most column of " +
+                    "the specific row you wish to select " +
+                    "record.", "ALERT", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void searchbtn2_Click(object sender, EventArgs e)
+        {
+            try
+            {
+
+                Sqlcon.ConnectionString = dataInfo;
+                Sqlcon.Open();
+
+                using (DataTable dtable = new DataTable("Expense_Name"))
+                {
+
+                    using (MySqlCommand cmd = new MySqlCommand("SELECT * FROM expenserec.expenset WHERE (Category_Type LIKE @Category_Type) AND username = @username;", Sqlcon))
+                    {
+                        cmd.Parameters.AddWithValue("username", Login.Username);
+                        cmd.Parameters.AddWithValue("Category_Type", string.Format("%{0}%",
+                            expsearch.Text));
+                        MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
+                        adapter.Fill(dtable);
+                        dgv1.DataSource = dtable;
+                    }
+                    Sqlcon.Close();
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }

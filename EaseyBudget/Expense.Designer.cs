@@ -44,6 +44,7 @@
             this.gmapbg = new System.Windows.Forms.PictureBox();
             this.googleweb = new System.Windows.Forms.WebBrowser();
             this.proceedbtn = new System.Windows.Forms.Button();
+            this.clearbtn = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.gmappanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gmapbg)).BeginInit();
@@ -52,6 +53,8 @@
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(207)))), ((int)(((byte)(190)))));
+            this.groupBox1.Controls.Add(this.proceedbtn);
+            this.groupBox1.Controls.Add(this.clearbtn);
             this.groupBox1.Controls.Add(this.searchbtn);
             this.groupBox1.Controls.Add(this.locoftrans);
             this.groupBox1.Controls.Add(this.label5);
@@ -70,6 +73,7 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Expense Details";
+            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // searchbtn
             // 
@@ -79,7 +83,7 @@
             this.searchbtn.Location = new System.Drawing.Point(11, 312);
             this.searchbtn.Name = "searchbtn";
             this.searchbtn.Size = new System.Drawing.Size(56, 23);
-            this.searchbtn.TabIndex = 10;
+            this.searchbtn.TabIndex = 4;
             this.searchbtn.Text = "Search";
             this.searchbtn.UseVisualStyleBackColor = false;
             this.searchbtn.Click += new System.EventHandler(this.searchbtn_Click);
@@ -90,7 +94,7 @@
             this.locoftrans.Location = new System.Drawing.Point(11, 272);
             this.locoftrans.Name = "locoftrans";
             this.locoftrans.Size = new System.Drawing.Size(264, 27);
-            this.locoftrans.TabIndex = 9;
+            this.locoftrans.TabIndex = 3;
             // 
             // label5
             // 
@@ -109,7 +113,7 @@
             this.detailstxt.Multiline = true;
             this.detailstxt.Name = "detailstxt";
             this.detailstxt.Size = new System.Drawing.Size(264, 112);
-            this.detailstxt.TabIndex = 7;
+            this.detailstxt.TabIndex = 5;
             // 
             // label4
             // 
@@ -127,7 +131,7 @@
             this.amountxt.Location = new System.Drawing.Point(11, 200);
             this.amountxt.Name = "amountxt";
             this.amountxt.Size = new System.Drawing.Size(179, 27);
-            this.amountxt.TabIndex = 5;
+            this.amountxt.TabIndex = 2;
             this.amountxt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.amountxt_KeyPress);
             // 
             // label3
@@ -156,7 +160,7 @@
             this.expcategory.Location = new System.Drawing.Point(11, 128);
             this.expcategory.Name = "expcategory";
             this.expcategory.Size = new System.Drawing.Size(216, 27);
-            this.expcategory.TabIndex = 3;
+            this.expcategory.TabIndex = 1;
             this.expcategory.SelectedIndexChanged += new System.EventHandler(this.expcategory_SelectedIndexChanged);
             // 
             // nametxt
@@ -165,7 +169,7 @@
             this.nametxt.Location = new System.Drawing.Point(11, 56);
             this.nametxt.Name = "nametxt";
             this.nametxt.Size = new System.Drawing.Size(216, 27);
-            this.nametxt.TabIndex = 2;
+            this.nametxt.TabIndex = 0;
             // 
             // label2
             // 
@@ -222,13 +226,26 @@
             this.proceedbtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
             this.proceedbtn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.proceedbtn.Font = new System.Drawing.Font("Roboto", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.proceedbtn.Location = new System.Drawing.Point(27, 506);
+            this.proceedbtn.Location = new System.Drawing.Point(12, 502);
             this.proceedbtn.Name = "proceedbtn";
             this.proceedbtn.Size = new System.Drawing.Size(79, 23);
-            this.proceedbtn.TabIndex = 11;
+            this.proceedbtn.TabIndex = 0;
             this.proceedbtn.Text = "Proceed";
             this.proceedbtn.UseVisualStyleBackColor = false;
             this.proceedbtn.Click += new System.EventHandler(this.proceedbtn_Click);
+            // 
+            // clearbtn
+            // 
+            this.clearbtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.clearbtn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.clearbtn.Font = new System.Drawing.Font("Roboto", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.clearbtn.Location = new System.Drawing.Point(96, 502);
+            this.clearbtn.Name = "clearbtn";
+            this.clearbtn.Size = new System.Drawing.Size(79, 23);
+            this.clearbtn.TabIndex = 10;
+            this.clearbtn.Text = "Clear";
+            this.clearbtn.UseVisualStyleBackColor = false;
+            this.clearbtn.Click += new System.EventHandler(this.clearbtn_Click);
             // 
             // Expense
             // 
@@ -236,7 +253,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(236)))), ((int)(((byte)(227)))));
             this.ClientSize = new System.Drawing.Size(814, 561);
-            this.Controls.Add(this.proceedbtn);
             this.Controls.Add(this.gmappanel);
             this.Controls.Add(this.groupBox1);
             this.Name = "Expense";
@@ -268,5 +284,6 @@
         private System.Windows.Forms.Button proceedbtn;
         private System.Windows.Forms.WebBrowser googleweb;
         private System.Windows.Forms.PictureBox gmapbg;
+        private System.Windows.Forms.Button clearbtn;
     }
 }

@@ -13,7 +13,7 @@ namespace EaseyBudget
 {
     public partial class SignUp : Form
     {
-        public static string FirstName { get; set; }
+        public static string FirstName { get; set; } 
 
         public string mySqlServerName = "127.0.0.1";
         public string mySqlServerUserId = "root";

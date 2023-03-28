@@ -36,7 +36,7 @@
             this.searchbtn2 = new System.Windows.Forms.Button();
             this.incsearch = new System.Windows.Forms.ComboBox();
             this.searchnavleft = new System.Windows.Forms.Panel();
-            this.searchbox = new CustomControls.RJControls.RJTextBox();
+            this.searchbox = new System.Windows.Forms.TextBox();
             this.searchbtn1 = new System.Windows.Forms.Button();
             this.timenav = new System.Windows.Forms.Panel();
             this.datenav = new System.Windows.Forms.Panel();
@@ -54,7 +54,10 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.dbcell = new System.Windows.Forms.Panel();
+            this.dgv1 = new System.Windows.Forms.DataGridView();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.select = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.timer = new System.Windows.Forms.Timer(this.components);
             this.topnav.SuspendLayout();
             this.searchnav.SuspendLayout();
@@ -65,6 +68,9 @@
             this.daynav.SuspendLayout();
             this.hrminav.SuspendLayout();
             this.dbsection.SuspendLayout();
+            this.dbcell.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv1)).BeginInit();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // topnav
@@ -121,6 +127,7 @@
             this.searchbtn2.Size = new System.Drawing.Size(34, 34);
             this.searchbtn2.TabIndex = 5;
             this.searchbtn2.UseVisualStyleBackColor = false;
+            this.searchbtn2.Click += new System.EventHandler(this.searchbtn2_Click);
             this.searchbtn2.MouseEnter += new System.EventHandler(this.searchbtn2_MouseEnter);
             this.searchbtn2.MouseLeave += new System.EventHandler(this.searchbtn2_MouseLeave);
             this.searchbtn2.MouseHover += new System.EventHandler(this.searchbtn2_MouseHover);
@@ -156,25 +163,11 @@
             // 
             // searchbox
             // 
-            this.searchbox.BackColor = System.Drawing.Color.White;
-            this.searchbox.BorderColor = System.Drawing.Color.Black;
-            this.searchbox.BorderFocusColor = System.Drawing.Color.Blue;
-            this.searchbox.BorderRadius = 0;
-            this.searchbox.BorderSize = 2;
-            this.searchbox.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.searchbox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.searchbox.Location = new System.Drawing.Point(19, 0);
-            this.searchbox.Margin = new System.Windows.Forms.Padding(4);
-            this.searchbox.Multiline = false;
+            this.searchbox.Font = new System.Drawing.Font("Roboto", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.searchbox.Location = new System.Drawing.Point(70, 2);
             this.searchbox.Name = "searchbox";
-            this.searchbox.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
-            this.searchbox.PasswordChar = false;
-            this.searchbox.PlaceholderColor = System.Drawing.Color.DarkGray;
-            this.searchbox.PlaceholderText = "";
-            this.searchbox.Size = new System.Drawing.Size(352, 34);
-            this.searchbox.TabIndex = 3;
-            this.searchbox.Texts = "";
-            this.searchbox.UnderlinedStyle = false;
+            this.searchbox.Size = new System.Drawing.Size(296, 30);
+            this.searchbox.TabIndex = 4;
             // 
             // searchbtn1
             // 
@@ -189,6 +182,7 @@
             this.searchbtn1.Size = new System.Drawing.Size(34, 34);
             this.searchbtn1.TabIndex = 2;
             this.searchbtn1.UseVisualStyleBackColor = false;
+            this.searchbtn1.Click += new System.EventHandler(this.searchbtn1_Click);
             this.searchbtn1.MouseEnter += new System.EventHandler(this.searchbtn1_MouseEnter);
             this.searchbtn1.MouseLeave += new System.EventHandler(this.searchbtn1_MouseLeave);
             this.searchbtn1.MouseHover += new System.EventHandler(this.searchbtn1_MouseHover);
@@ -211,7 +205,7 @@
             this.datenav.Dock = System.Windows.Forms.DockStyle.Fill;
             this.datenav.Location = new System.Drawing.Point(266, 0);
             this.datenav.Name = "datenav";
-            this.datenav.Size = new System.Drawing.Size(370, 74);
+            this.datenav.Size = new System.Drawing.Size(342, 74);
             this.datenav.TabIndex = 2;
             // 
             // lbldate
@@ -228,9 +222,9 @@
             // 
             this.daynav.Controls.Add(this.lblday);
             this.daynav.Dock = System.Windows.Forms.DockStyle.Right;
-            this.daynav.Location = new System.Drawing.Point(636, 0);
+            this.daynav.Location = new System.Drawing.Point(608, 0);
             this.daynav.Name = "daynav";
-            this.daynav.Size = new System.Drawing.Size(178, 74);
+            this.daynav.Size = new System.Drawing.Size(206, 74);
             this.daynav.TabIndex = 1;
             // 
             // lblday
@@ -330,35 +324,70 @@
             // panel4
             // 
             this.panel4.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel4.Location = new System.Drawing.Point(794, 20);
+            this.panel4.Location = new System.Drawing.Point(794, 38);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(20, 373);
+            this.panel4.Size = new System.Drawing.Size(20, 355);
             this.panel4.TabIndex = 4;
             // 
             // panel3
             // 
             this.panel3.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel3.Location = new System.Drawing.Point(0, 20);
+            this.panel3.Location = new System.Drawing.Point(0, 38);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(20, 373);
+            this.panel3.Size = new System.Drawing.Size(20, 355);
             this.panel3.TabIndex = 3;
             // 
             // dbcell
             // 
             this.dbcell.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(207)))), ((int)(((byte)(190)))));
+            this.dbcell.Controls.Add(this.dgv1);
             this.dbcell.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dbcell.Location = new System.Drawing.Point(0, 20);
+            this.dbcell.Location = new System.Drawing.Point(0, 38);
             this.dbcell.Name = "dbcell";
-            this.dbcell.Size = new System.Drawing.Size(814, 373);
+            this.dbcell.Size = new System.Drawing.Size(814, 355);
             this.dbcell.TabIndex = 1;
+            // 
+            // dgv1
+            // 
+            this.dgv1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv1.Location = new System.Drawing.Point(20, 0);
+            this.dgv1.Name = "dgv1";
+            this.dgv1.Size = new System.Drawing.Size(772, 332);
+            this.dgv1.TabIndex = 1;
+            this.dgv1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv1_CellClick);
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.select);
+            this.panel2.Controls.Add(this.label2);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(814, 20);
+            this.panel2.Size = new System.Drawing.Size(814, 38);
             this.panel2.TabIndex = 2;
+            // 
+            // select
+            // 
+            this.select.AutoSize = true;
+            this.select.BackColor = System.Drawing.Color.Black;
+            this.select.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.select.ForeColor = System.Drawing.Color.Yellow;
+            this.select.Location = new System.Drawing.Point(667, 15);
+            this.select.Name = "select";
+            this.select.Size = new System.Drawing.Size(49, 19);
+            this.select.TabIndex = 3;
+            this.select.Text = "NULL";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.Blue;
+            this.label2.Location = new System.Drawing.Point(573, 16);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(96, 19);
+            this.label2.TabIndex = 2;
+            this.label2.Text = "Selected ID:";
             // 
             // timer
             // 
@@ -384,6 +413,7 @@
             this.searchnav.ResumeLayout(false);
             this.searchnavright.ResumeLayout(false);
             this.searchnavleft.ResumeLayout(false);
+            this.searchnavleft.PerformLayout();
             this.timenav.ResumeLayout(false);
             this.datenav.ResumeLayout(false);
             this.datenav.PerformLayout();
@@ -392,6 +422,10 @@
             this.hrminav.ResumeLayout(false);
             this.hrminav.PerformLayout();
             this.dbsection.ResumeLayout(false);
+            this.dbcell.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgv1)).EndInit();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -405,7 +439,6 @@
         private System.Windows.Forms.Button searchbtn2;
         private System.Windows.Forms.ComboBox incsearch;
         private System.Windows.Forms.Panel searchnavleft;
-        private CustomControls.RJControls.RJTextBox searchbox;
         private System.Windows.Forms.Button searchbtn1;
         private System.Windows.Forms.Panel timenav;
         private System.Windows.Forms.Panel datenav;
@@ -425,5 +458,9 @@
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Timer timer;
+        private System.Windows.Forms.DataGridView dgv1;
+        private System.Windows.Forms.Label select;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox searchbox;
     }
 }

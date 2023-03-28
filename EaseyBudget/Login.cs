@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
 using MySql.Data.MySqlClient;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace EaseyBudget
 {
@@ -16,7 +17,7 @@ namespace EaseyBudget
     {
         public static string Username { get; set; }
         public static string Password { get; set; }
-
+        public static string UserID { get; set; }
         public string mySqlServerName = "127.0.0.1";
         public string mySqlServerUserId = "root";
         public string mySqlServerPassword = "Admin1234-";
@@ -157,6 +158,7 @@ namespace EaseyBudget
             }
             else if (dataReader.Read())
             {
+                //user_id = Convert.ToInt32(dataReader["user_id"]);
                 user_id = Convert.ToInt32(dataReader["user_id"]);
                 user = dataReader["username"].ToString();
                 pass = dataReader["user_password"].ToString();
@@ -165,6 +167,8 @@ namespace EaseyBudget
                 {
                     Username = usertxt.Texts.ToLower();
                     Password = passtxt.Texts;
+
+                    UserID = user_id.ToString();
                     this.Hide();
                     Dashboard dashb = new Dashboard();
                     dashb.Show();

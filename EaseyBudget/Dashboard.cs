@@ -8,12 +8,24 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
-
+using MySql.Data.MySqlClient;
+using System.Collections;
 
 namespace EaseyBudget
 {
     public partial class Dashboard : Form
     {
+        string dataInfo1 = "server=localhost;"
+                       + "password=Admin1234-;"
+                       + "user=root;"
+                       + "database=expenserec;"
+                       + "port=3306;";
+
+        string dataInfo2 = "server=localhost;"
+                       + "password=Admin1234-;"
+                       + "user=root;"
+                       + "database=incomerec;"
+                       + "port=3306;";
 
         public Dashboard()
         {
@@ -38,6 +50,77 @@ namespace EaseyBudget
             lexpdate.Text = Expense.DateText;
             lincam.Text = Income.AmountText;
             lincdate.Text = Income.DateText;
+
+            string query1 = $"SELECT MIN(Expense_Amount) FROM expenserec.expenset WHERE username='{Login.Username}';";
+            string query2 = $"SELECT MAX(Expense_Amount) FROM expenserec.expenset WHERE username='{Login.Username}';";
+            string query3 = $"SELECT MAX(Date_Recorded) FROM expenserec.expenset WHERE username='{Login.Username}';";
+            string contentquery1 = "SELECT * FROM expenserec.expenset WHERE Date_Recorded = (SELECT MAX(Date_Recorded) FROM expenserec.expenset)";
+
+            string query1a = $"SELECT MIN(Income_Amount) FROM incomerec.incomet WHERE username='{Login.Username}';";
+            string query2a = $"SELECT MAX(Income_Amount) FROM incomerec.incomet WHERE username='{Login.Username}';";
+            string query3a = $"SELECT MAX(Date_Recorded) FROM incomerec.incomet WHERE username='{Login.Username}';";
+            string contentquery1a = "SELECT * FROM incomerec.incomet WHERE Date_Recorded = (SELECT MAX(Date_Recorded) FROM incomerec.incomet)";
+
+            using (MySqlConnection connection = new MySqlConnection(dataInfo1))
+            {
+                MySqlCommand command1 = new MySqlCommand(query1, connection);
+                MySqlCommand command2 = new MySqlCommand(query2, connection);
+                MySqlCommand command3 = new MySqlCommand(query3, connection);
+                MySqlCommand contentcommand = new MySqlCommand(contentquery1, connection);
+                try
+                {
+                    connection.Open();
+                    double minValue = Convert.ToDouble(command1.ExecuteScalar());
+                    minexp.Text = ($"Php {minValue.ToString("N2")}");
+                    double maxValue = Convert.ToDouble(command2.ExecuteScalar());
+                    maxexp.Text = ($"Php {maxValue.ToString("N2")}");
+                    DateTime recentDate = Convert.ToDateTime(command3.ExecuteScalar());
+                    lexpdate.Text = recentDate.ToShortDateString();
+
+                    MySqlDataReader reader = contentcommand.ExecuteReader();
+                    while (reader.Read())
+                    {
+                        double latestamount = Convert.ToDouble(reader["Expense_Amount"]);
+                        lexpam.Text = ($"Php {latestamount.ToString("N2")}");
+                    }
+
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("Error: " + ex.Message);
+                }
+            }
+
+            using (MySqlConnection connectiona = new MySqlConnection(dataInfo2))
+            {
+                MySqlCommand command1a = new MySqlCommand(query1a, connectiona);
+                MySqlCommand command2a = new MySqlCommand(query2a, connectiona);
+                MySqlCommand command3a = new MySqlCommand(query3a, connectiona);
+                MySqlCommand contentcommanda = new MySqlCommand(contentquery1a, connectiona);
+                try
+                {
+                    connectiona.Open();
+                    double minValue = Convert.ToDouble(command1a.ExecuteScalar());
+                    mininc.Text = ($"Php {minValue.ToString("N2")}");
+                    double maxValue = Convert.ToDouble(command2a.ExecuteScalar());
+                    maxinc.Text = ($"Php {maxValue.ToString("N2")}");
+                    DateTime recentDate = Convert.ToDateTime(command3a.ExecuteScalar());
+                    lincdate.Text = recentDate.ToShortDateString();
+
+                    MySqlDataReader reader = contentcommanda.ExecuteReader();
+                    while (reader.Read())
+                    {
+                        double latestamount = Convert.ToDouble(reader["Income_Amount"]);
+                        lincam.Text = ($"Php {latestamount.ToString("N2")}");
+                    }
+
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("Error: " + ex.Message);
+                }
+            }
+
         }
 
         private void Dashboard_FormClosed(object sender, FormClosedEventArgs e)
@@ -171,7 +254,10 @@ namespace EaseyBudget
 
         private void logoutbtn_Click(object sender, EventArgs e)
         {
- 
+
+            this.Hide();
+            Login l1 = new Login();
+            l1.Show();
         }
 
         private void expensebtn_Click(object sender, EventArgs e)

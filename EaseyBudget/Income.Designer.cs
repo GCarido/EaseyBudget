@@ -44,6 +44,7 @@
             this.nametxt = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.clearbtn = new System.Windows.Forms.Button();
             this.gmappanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gmapbg1)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -82,6 +83,7 @@
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(207)))), ((int)(((byte)(190)))));
+            this.groupBox1.Controls.Add(this.clearbtn);
             this.groupBox1.Controls.Add(this.proceedbtn);
             this.groupBox1.Controls.Add(this.searchbtn);
             this.groupBox1.Controls.Add(this.locoftrans);
@@ -110,7 +112,7 @@
             this.proceedbtn.Location = new System.Drawing.Point(11, 502);
             this.proceedbtn.Name = "proceedbtn";
             this.proceedbtn.Size = new System.Drawing.Size(79, 23);
-            this.proceedbtn.TabIndex = 12;
+            this.proceedbtn.TabIndex = 6;
             this.proceedbtn.Text = "Proceed";
             this.proceedbtn.UseVisualStyleBackColor = false;
             this.proceedbtn.Click += new System.EventHandler(this.proceedbtn_Click);
@@ -123,7 +125,7 @@
             this.searchbtn.Location = new System.Drawing.Point(11, 312);
             this.searchbtn.Name = "searchbtn";
             this.searchbtn.Size = new System.Drawing.Size(56, 23);
-            this.searchbtn.TabIndex = 11;
+            this.searchbtn.TabIndex = 4;
             this.searchbtn.Text = "Search";
             this.searchbtn.UseVisualStyleBackColor = false;
             this.searchbtn.Click += new System.EventHandler(this.searchbtn_Click);
@@ -134,7 +136,7 @@
             this.locoftrans.Location = new System.Drawing.Point(11, 272);
             this.locoftrans.Name = "locoftrans";
             this.locoftrans.Size = new System.Drawing.Size(264, 27);
-            this.locoftrans.TabIndex = 9;
+            this.locoftrans.TabIndex = 3;
             // 
             // label5
             // 
@@ -153,7 +155,7 @@
             this.detailstxt.Multiline = true;
             this.detailstxt.Name = "detailstxt";
             this.detailstxt.Size = new System.Drawing.Size(264, 112);
-            this.detailstxt.TabIndex = 7;
+            this.detailstxt.TabIndex = 5;
             // 
             // label4
             // 
@@ -171,7 +173,7 @@
             this.amountxt.Location = new System.Drawing.Point(11, 200);
             this.amountxt.Name = "amountxt";
             this.amountxt.Size = new System.Drawing.Size(179, 27);
-            this.amountxt.TabIndex = 5;
+            this.amountxt.TabIndex = 2;
             this.amountxt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.amountxt_KeyPress);
             // 
             // label3
@@ -200,7 +202,7 @@
             this.incategory.Location = new System.Drawing.Point(11, 128);
             this.incategory.Name = "incategory";
             this.incategory.Size = new System.Drawing.Size(216, 27);
-            this.incategory.TabIndex = 3;
+            this.incategory.TabIndex = 1;
             this.incategory.SelectedIndexChanged += new System.EventHandler(this.incategory_SelectedIndexChanged);
             // 
             // nametxt
@@ -209,7 +211,7 @@
             this.nametxt.Location = new System.Drawing.Point(11, 56);
             this.nametxt.Name = "nametxt";
             this.nametxt.Size = new System.Drawing.Size(216, 27);
-            this.nametxt.TabIndex = 2;
+            this.nametxt.TabIndex = 0;
             // 
             // label2
             // 
@@ -230,6 +232,19 @@
             this.label1.Size = new System.Drawing.Size(110, 19);
             this.label1.TabIndex = 0;
             this.label1.Text = "Category Type";
+            // 
+            // clearbtn
+            // 
+            this.clearbtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.clearbtn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.clearbtn.Font = new System.Drawing.Font("Roboto", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.clearbtn.Location = new System.Drawing.Point(96, 502);
+            this.clearbtn.Name = "clearbtn";
+            this.clearbtn.Size = new System.Drawing.Size(79, 23);
+            this.clearbtn.TabIndex = 9;
+            this.clearbtn.Text = "Clear";
+            this.clearbtn.UseVisualStyleBackColor = false;
+            this.clearbtn.Click += new System.EventHandler(this.clearbtn_Click);
             // 
             // Income
             // 
@@ -268,5 +283,6 @@
         private System.Windows.Forms.Button proceedbtn;
         private System.Windows.Forms.WebBrowser googleweb;
         private System.Windows.Forms.PictureBox gmapbg1;
+        private System.Windows.Forms.Button clearbtn;
     }
 }

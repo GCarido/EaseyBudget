@@ -42,8 +42,8 @@
             this.calendarnav = new System.Windows.Forms.Panel();
             this.calendar1 = new System.Windows.Forms.MonthCalendar();
             this.expstat = new System.Windows.Forms.GroupBox();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
+            this.maxexp = new System.Windows.Forms.Label();
+            this.minexp = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -57,8 +57,8 @@
             this.label16 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
             this.incstat = new System.Windows.Forms.GroupBox();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
+            this.maxinc = new System.Windows.Forms.Label();
+            this.mininc = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.leftnav = new System.Windows.Forms.Panel();
@@ -246,8 +246,8 @@
             // expstat
             // 
             this.expstat.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(207)))), ((int)(((byte)(190)))));
-            this.expstat.Controls.Add(this.label11);
-            this.expstat.Controls.Add(this.label10);
+            this.expstat.Controls.Add(this.maxexp);
+            this.expstat.Controls.Add(this.minexp);
             this.expstat.Controls.Add(this.label3);
             this.expstat.Controls.Add(this.label2);
             this.expstat.Font = new System.Drawing.Font("Montserrat", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -259,29 +259,29 @@
             this.expstat.Text = "Expense Status";
             this.expstat.Enter += new System.EventHandler(this.groupBox3_Enter);
             // 
-            // label11
+            // maxexp
             // 
-            this.label11.AutoSize = true;
-            this.label11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.label11.Font = new System.Drawing.Font("Roboto Black", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.ForeColor = System.Drawing.Color.MediumSpringGreen;
-            this.label11.Location = new System.Drawing.Point(9, 117);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(53, 18);
-            this.label11.TabIndex = 3;
-            this.label11.Text = "VALUE";
+            this.maxexp.AutoSize = true;
+            this.maxexp.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.maxexp.Font = new System.Drawing.Font("Roboto Black", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.maxexp.ForeColor = System.Drawing.Color.MediumSpringGreen;
+            this.maxexp.Location = new System.Drawing.Point(9, 117);
+            this.maxexp.Name = "maxexp";
+            this.maxexp.Size = new System.Drawing.Size(53, 18);
+            this.maxexp.TabIndex = 3;
+            this.maxexp.Text = "VALUE";
             // 
-            // label10
+            // minexp
             // 
-            this.label10.AutoSize = true;
-            this.label10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.label10.Font = new System.Drawing.Font("Roboto Black", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.ForeColor = System.Drawing.Color.MediumSpringGreen;
-            this.label10.Location = new System.Drawing.Point(9, 64);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(57, 18);
-            this.label10.TabIndex = 2;
-            this.label10.Text = "VALUE ";
+            this.minexp.AutoSize = true;
+            this.minexp.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.minexp.Font = new System.Drawing.Font("Roboto Black", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.minexp.ForeColor = System.Drawing.Color.MediumSpringGreen;
+            this.minexp.Location = new System.Drawing.Point(9, 64);
+            this.minexp.Name = "minexp";
+            this.minexp.Size = new System.Drawing.Size(57, 18);
+            this.minexp.TabIndex = 2;
+            this.minexp.Text = "VALUE ";
             // 
             // label3
             // 
@@ -419,8 +419,8 @@
             // incstat
             // 
             this.incstat.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(207)))), ((int)(((byte)(190)))));
-            this.incstat.Controls.Add(this.label13);
-            this.incstat.Controls.Add(this.label12);
+            this.incstat.Controls.Add(this.maxinc);
+            this.incstat.Controls.Add(this.mininc);
             this.incstat.Controls.Add(this.label6);
             this.incstat.Controls.Add(this.label7);
             this.incstat.Font = new System.Drawing.Font("Montserrat", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -431,29 +431,29 @@
             this.incstat.TabStop = false;
             this.incstat.Text = "Income Status";
             // 
-            // label13
+            // maxinc
             // 
-            this.label13.AutoSize = true;
-            this.label13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.label13.Font = new System.Drawing.Font("Roboto Black", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.ForeColor = System.Drawing.Color.MediumSpringGreen;
-            this.label13.Location = new System.Drawing.Point(7, 117);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(53, 18);
-            this.label13.TabIndex = 3;
-            this.label13.Text = "VALUE";
+            this.maxinc.AutoSize = true;
+            this.maxinc.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.maxinc.Font = new System.Drawing.Font("Roboto Black", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.maxinc.ForeColor = System.Drawing.Color.MediumSpringGreen;
+            this.maxinc.Location = new System.Drawing.Point(7, 117);
+            this.maxinc.Name = "maxinc";
+            this.maxinc.Size = new System.Drawing.Size(53, 18);
+            this.maxinc.TabIndex = 3;
+            this.maxinc.Text = "VALUE";
             // 
-            // label12
+            // mininc
             // 
-            this.label12.AutoSize = true;
-            this.label12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.label12.Font = new System.Drawing.Font("Roboto Black", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.ForeColor = System.Drawing.Color.MediumSpringGreen;
-            this.label12.Location = new System.Drawing.Point(7, 64);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(53, 18);
-            this.label12.TabIndex = 2;
-            this.label12.Text = "VALUE";
+            this.mininc.AutoSize = true;
+            this.mininc.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.mininc.Font = new System.Drawing.Font("Roboto Black", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.mininc.ForeColor = System.Drawing.Color.MediumSpringGreen;
+            this.mininc.Location = new System.Drawing.Point(7, 64);
+            this.mininc.Name = "mininc";
+            this.mininc.Size = new System.Drawing.Size(53, 18);
+            this.mininc.TabIndex = 2;
+            this.mininc.Text = "VALUE";
             // 
             // label6
             // 
@@ -680,15 +680,15 @@
         private System.Windows.Forms.Panel formview;
         private System.Windows.Forms.PictureBox logo1;
         private System.Windows.Forms.GroupBox expstat;
-        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label minexp;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.GroupBox incstat;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label maxinc;
+        private System.Windows.Forms.Label mininc;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label maxexp;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label lexpdate;
