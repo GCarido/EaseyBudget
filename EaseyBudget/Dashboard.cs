@@ -249,7 +249,8 @@ namespace EaseyBudget
 
         private void logoutbtn_Click(object sender, EventArgs e)
         {
-
+            Expense.NameofExpense1 = Expense.CategoryExpense1 = Expense.AmountExpense1 = Expense.LocationExpense1 = Expense.DetailsExpense1 = "";
+            Income.NameofIncome1 = Income.CategoryIncome1 = Income.AmountIncome1 = Income.LocationIncome1 = Income.DetailsIncome1 = "";
             this.Hide();
             Login l1 = new Login();
             l1.Show();

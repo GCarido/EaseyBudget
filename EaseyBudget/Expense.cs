@@ -208,7 +208,7 @@ namespace EaseyBudget
 
         }
 
-        private void clearbtn_Click(object sender, EventArgs e)
+        public void clearbtn_Click(object sender, EventArgs e)
         {
             expcategory.SelectedIndex = -1;
             amountxt.Text = locoftrans.Text = detailstxt.Text = nametxt.Text = "";
