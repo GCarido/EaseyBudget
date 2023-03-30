@@ -37,12 +37,12 @@ namespace EaseyBudget
 
         private void SignUp_Load(object sender, EventArgs e)
         {
-
+            this.AcceptButton = registerbtn;
         }
 
         private void registerbtn_Click(object sender, EventArgs e)
         {
-            if (firstntext.Texts == "" || lastntext.Texts == "" || emailtxt.Texts == "" || userntxt.Texts == "" || passwtxt.Texts == "" || confpasstxt.Texts == "")
+            if (firstntext.Texts == "" || lastntext.Texts == "" || userntxt.Texts == "" || passwtxt.Texts == "" || confpasstxt.Texts == "")
             {
                 MessageBox.Show("Incomplete Field Entry", "Notice",
                     MessageBoxButtons.OK, MessageBoxIcon.Information);

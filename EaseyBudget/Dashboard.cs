@@ -46,11 +46,6 @@ namespace EaseyBudget
             eventsweb.ScriptErrorsSuppressed = true;
             eventsweb.Navigate("https://publicholidays.ph/2023-dates/");
 
-            lexpam.Text = Expense.AmountText;
-            lexpdate.Text = Expense.DateText;
-            lincam.Text = Income.AmountText;
-            lincdate.Text = Income.DateText;
-
             string query1 = $"SELECT MIN(Expense_Amount) FROM expenserec.expenset WHERE username='{Login.Username}';";
             string query2 = $"SELECT MAX(Expense_Amount) FROM expenserec.expenset WHERE username='{Login.Username}';";
             string query3 = $"SELECT MAX(Date_Recorded) FROM expenserec.expenset WHERE username='{Login.Username}';";

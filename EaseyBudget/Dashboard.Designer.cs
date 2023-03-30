@@ -267,9 +267,9 @@
             this.maxexp.ForeColor = System.Drawing.Color.MediumSpringGreen;
             this.maxexp.Location = new System.Drawing.Point(9, 117);
             this.maxexp.Name = "maxexp";
-            this.maxexp.Size = new System.Drawing.Size(53, 18);
+            this.maxexp.Size = new System.Drawing.Size(91, 18);
             this.maxexp.TabIndex = 3;
-            this.maxexp.Text = "VALUE";
+            this.maxexp.Text = "NO RECORD";
             // 
             // minexp
             // 
@@ -279,9 +279,9 @@
             this.minexp.ForeColor = System.Drawing.Color.MediumSpringGreen;
             this.minexp.Location = new System.Drawing.Point(9, 64);
             this.minexp.Name = "minexp";
-            this.minexp.Size = new System.Drawing.Size(57, 18);
+            this.minexp.Size = new System.Drawing.Size(91, 18);
             this.minexp.TabIndex = 2;
-            this.minexp.Text = "VALUE ";
+            this.minexp.Text = "NO RECORD";
             // 
             // label3
             // 
@@ -325,9 +325,9 @@
             this.lexpdate.ForeColor = System.Drawing.Color.MediumSpringGreen;
             this.lexpdate.Location = new System.Drawing.Point(9, 124);
             this.lexpdate.Name = "lexpdate";
-            this.lexpdate.Size = new System.Drawing.Size(104, 18);
+            this.lexpdate.Size = new System.Drawing.Size(95, 18);
             this.lexpdate.TabIndex = 7;
-            this.lexpdate.Text = "MM-DD-YYYY";
+            this.lexpdate.Text = "NO RECORD ";
             // 
             // lexpam
             // 
@@ -337,9 +337,9 @@
             this.lexpam.ForeColor = System.Drawing.Color.MediumSpringGreen;
             this.lexpam.Location = new System.Drawing.Point(9, 65);
             this.lexpam.Name = "lexpam";
-            this.lexpam.Size = new System.Drawing.Size(53, 18);
+            this.lexpam.Size = new System.Drawing.Size(95, 18);
             this.lexpam.TabIndex = 4;
-            this.lexpam.Text = "VALUE";
+            this.lexpam.Text = "NO RECORD ";
             // 
             // label8
             // 
@@ -382,9 +382,9 @@
             this.lincdate.ForeColor = System.Drawing.Color.MediumSpringGreen;
             this.lincdate.Location = new System.Drawing.Point(7, 124);
             this.lincdate.Name = "lincdate";
-            this.lincdate.Size = new System.Drawing.Size(104, 18);
+            this.lincdate.Size = new System.Drawing.Size(91, 18);
             this.lincdate.TabIndex = 7;
-            this.lincdate.Text = "MM-DD-YYYY";
+            this.lincdate.Text = "NO RECORD";
             // 
             // lincam
             // 
@@ -394,9 +394,9 @@
             this.lincam.ForeColor = System.Drawing.Color.MediumSpringGreen;
             this.lincam.Location = new System.Drawing.Point(7, 65);
             this.lincam.Name = "lincam";
-            this.lincam.Size = new System.Drawing.Size(53, 18);
+            this.lincam.Size = new System.Drawing.Size(91, 18);
             this.lincam.TabIndex = 4;
-            this.lincam.Text = "VALUE";
+            this.lincam.Text = "NO RECORD";
             // 
             // label16
             // 
@@ -439,9 +439,9 @@
             this.maxinc.ForeColor = System.Drawing.Color.MediumSpringGreen;
             this.maxinc.Location = new System.Drawing.Point(7, 117);
             this.maxinc.Name = "maxinc";
-            this.maxinc.Size = new System.Drawing.Size(53, 18);
+            this.maxinc.Size = new System.Drawing.Size(91, 18);
             this.maxinc.TabIndex = 3;
-            this.maxinc.Text = "VALUE";
+            this.maxinc.Text = "NO RECORD";
             // 
             // mininc
             // 
@@ -451,9 +451,9 @@
             this.mininc.ForeColor = System.Drawing.Color.MediumSpringGreen;
             this.mininc.Location = new System.Drawing.Point(7, 64);
             this.mininc.Name = "mininc";
-            this.mininc.Size = new System.Drawing.Size(53, 18);
+            this.mininc.Size = new System.Drawing.Size(91, 18);
             this.mininc.TabIndex = 2;
-            this.mininc.Text = "VALUE";
+            this.mininc.Text = "NO RECORD";
             // 
             // label6
             // 
