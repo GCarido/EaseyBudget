@@ -93,6 +93,7 @@ namespace EaseyBudget
                         dgv1.DataSource = dtable;
                     }
                     Sqlcon.Close();
+                    expsearch.SelectedIndex = -1;
                 }
 
             }
@@ -102,23 +103,7 @@ namespace EaseyBudget
             }
         }
 
-        private void searchbtn2_MouseEnter(object sender, EventArgs e)
-        {
-            searchbtn2.FlatStyle = FlatStyle.Popup;
-            searchbtn2.BackColor = Color.Cyan;
-        }
-
-        private void searchbtn2_MouseHover(object sender, EventArgs e)
-        {
-            searchbtn2.FlatStyle = FlatStyle.Popup;
-            searchbtn2.BackColor = Color.Cyan;
-        }
-
-        private void searchbtn2_MouseLeave(object sender, EventArgs e)
-        {
-            searchbtn2.FlatStyle = FlatStyle.Flat;
-            searchbtn2.BackColor = Color.Transparent;
-        }
+        
 
         private void timer_Tick(object sender, EventArgs e)
         {
@@ -170,6 +155,11 @@ namespace EaseyBudget
         }
 
         private void searchbtn2_Click(object sender, EventArgs e)
+        {
+          
+        }
+
+        private void expsearch_SelectedIndexChanged(object sender, EventArgs e)
         {
             try
             {

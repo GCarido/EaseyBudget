@@ -32,7 +32,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.topnav = new System.Windows.Forms.Panel();
             this.expsearch = new System.Windows.Forms.ComboBox();
-            this.searchbtn2 = new System.Windows.Forms.Button();
             this.searchbtn1 = new System.Windows.Forms.Button();
             this.timenav = new System.Windows.Forms.Panel();
             this.datenav = new System.Windows.Forms.Panel();
@@ -112,24 +111,7 @@
             this.expsearch.Name = "expsearch";
             this.expsearch.Size = new System.Drawing.Size(255, 33);
             this.expsearch.TabIndex = 4;
-            // 
-            // searchbtn2
-            // 
-            this.searchbtn2.BackColor = System.Drawing.Color.Transparent;
-            this.searchbtn2.BackgroundImage = global::EaseyBudget.Properties.Resources.find2;
-            this.searchbtn2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.searchbtn2.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.searchbtn2.FlatAppearance.BorderSize = 0;
-            this.searchbtn2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.searchbtn2.Location = new System.Drawing.Point(274, 0);
-            this.searchbtn2.Name = "searchbtn2";
-            this.searchbtn2.Size = new System.Drawing.Size(34, 34);
-            this.searchbtn2.TabIndex = 5;
-            this.searchbtn2.UseVisualStyleBackColor = false;
-            this.searchbtn2.Click += new System.EventHandler(this.searchbtn2_Click);
-            this.searchbtn2.MouseEnter += new System.EventHandler(this.searchbtn2_MouseEnter);
-            this.searchbtn2.MouseLeave += new System.EventHandler(this.searchbtn2_MouseLeave);
-            this.searchbtn2.MouseHover += new System.EventHandler(this.searchbtn2_MouseHover);
+            this.expsearch.SelectedIndexChanged += new System.EventHandler(this.expsearch_SelectedIndexChanged);
             // 
             // searchbtn1
             // 
@@ -265,7 +247,6 @@
             // 
             // searchnavright
             // 
-            this.searchnavright.Controls.Add(this.searchbtn2);
             this.searchnavright.Controls.Add(this.expsearch);
             this.searchnavright.Dock = System.Windows.Forms.DockStyle.Right;
             this.searchnavright.Location = new System.Drawing.Point(486, 0);
@@ -436,7 +417,6 @@
         private System.Windows.Forms.Panel topnav;
         private System.Windows.Forms.Button searchbtn1;
         private System.Windows.Forms.ComboBox expsearch;
-        private System.Windows.Forms.Button searchbtn2;
         private System.Windows.Forms.Panel timenav;
         private System.Windows.Forms.Panel searchnav;
         private System.Windows.Forms.Panel searchnavright;
