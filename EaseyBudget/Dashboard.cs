@@ -336,7 +336,7 @@ namespace EaseyBudget
            vincbtn.Font = new Font(logoutbtn.Font, FontStyle.Regular);
         }
 
-        private void vexpbtn_Click(object sender, EventArgs e)
+        public void vexpbtn_Click(object sender, EventArgs e)
         {
             ViewExpense vexp = new ViewExpense();
             vexp.TopLevel = false;

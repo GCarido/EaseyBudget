@@ -700,8 +700,6 @@
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Panel calendarnav;
-        private System.Windows.Forms.Button vincbtn;
-        private System.Windows.Forms.Button vexpbtn;
         private System.Windows.Forms.MonthCalendar calendar1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel eventspan;
@@ -709,5 +707,7 @@
         private System.Windows.Forms.Panel newspan;
         private System.Windows.Forms.ComboBox newscb;
         private System.Windows.Forms.WebBrowser newsweb;
+        internal System.Windows.Forms.Button vincbtn;
+        internal System.Windows.Forms.Button vexpbtn;
     }
 }

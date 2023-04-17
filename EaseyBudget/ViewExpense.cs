@@ -188,5 +188,40 @@ namespace EaseyBudget
                 MessageBox.Show(ex.Message);
             }
         }
+
+        private void delbtn_Click(object sender, EventArgs e)
+        {
+            if (select.Text == "NULL" || select.Text == "" || select.Text == "0")
+            {
+                MessageBox.Show("Please select a row to delete.", "NOTICE", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                if (MessageBox.Show("The record will be deleted. Do you want to continue?",
+                                       "Confirmation", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                {
+                    Sqlcon.ConnectionString = dataInfo;
+                    Sqlcon.Open();
+                    MySqlCommand sqlcmd = new MySqlCommand();
+                    sqlcmd.Connection = Sqlcon;
+                    sqlcmd.CommandText = "DELETE FROM expenserec.expenset " +
+                        "WHERE id = @id;";
+                    sqlcmd.CommandType = CommandType.Text;
+                    sqlcmd.Parameters.AddWithValue("@id", select.Text);
+                    sqlcmd.ExecuteNonQuery();
+                    Sqlcon.Close();
+                    foreach (DataGridViewRow item in this.dgv1.SelectedRows)
+                    {
+                        dgv1.Rows.RemoveAt(item.Index);
+                    }
+                    UploadData();
+                    select.Text = "";
+
+                    Dashboard db = (Dashboard)Application.OpenForms["Dashboard"];
+                    db.vexpbtn.PerformClick();
+                    MessageBox.Show("Record has been successfully deleted.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+        }
     }
 }
