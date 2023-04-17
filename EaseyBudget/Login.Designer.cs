@@ -37,6 +37,7 @@
             this.exitbtn = new System.Windows.Forms.Button();
             this.minbtn = new System.Windows.Forms.Button();
             this.panview = new System.Windows.Forms.Panel();
+            this.togglepass = new System.Windows.Forms.CheckBox();
             this.loginbtn = new System.Windows.Forms.Button();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -101,7 +102,7 @@
             this.signupnav.Location = new System.Drawing.Point(154, 0);
             this.signupnav.Name = "signupnav";
             this.signupnav.Size = new System.Drawing.Size(154, 46);
-            this.signupnav.TabIndex = 4;
+            this.signupnav.TabIndex = 1;
             this.signupnav.Text = "Sign Up";
             this.signupnav.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.signupnav.UseVisualStyleBackColor = false;
@@ -120,7 +121,7 @@
             this.signinav.Location = new System.Drawing.Point(0, 0);
             this.signinav.Name = "signinav";
             this.signinav.Size = new System.Drawing.Size(154, 46);
-            this.signinav.TabIndex = 3;
+            this.signinav.TabIndex = 0;
             this.signinav.Text = "Sign In";
             this.signinav.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.signinav.UseVisualStyleBackColor = false;
@@ -176,6 +177,7 @@
             // panview
             // 
             this.panview.BackColor = System.Drawing.Color.Transparent;
+            this.panview.Controls.Add(this.togglepass);
             this.panview.Controls.Add(this.loginbtn);
             this.panview.Controls.Add(this.pictureBox2);
             this.panview.Controls.Add(this.pictureBox1);
@@ -189,6 +191,19 @@
             this.panview.Size = new System.Drawing.Size(384, 461);
             this.panview.TabIndex = 80;
             // 
+            // togglepass
+            // 
+            this.togglepass.AutoSize = true;
+            this.togglepass.Font = new System.Drawing.Font("Montserrat", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.togglepass.ForeColor = System.Drawing.Color.Blue;
+            this.togglepass.Location = new System.Drawing.Point(95, 376);
+            this.togglepass.Name = "togglepass";
+            this.togglepass.Size = new System.Drawing.Size(130, 20);
+            this.togglepass.TabIndex = 2;
+            this.togglepass.Text = "Show Password";
+            this.togglepass.UseVisualStyleBackColor = true;
+            this.togglepass.CheckedChanged += new System.EventHandler(this.togglepass_CheckedChanged);
+            // 
             // loginbtn
             // 
             this.loginbtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
@@ -197,10 +212,10 @@
             this.loginbtn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.loginbtn.Font = new System.Drawing.Font("Montserrat", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.loginbtn.ForeColor = System.Drawing.Color.Black;
-            this.loginbtn.Location = new System.Drawing.Point(96, 384);
+            this.loginbtn.Location = new System.Drawing.Point(96, 404);
             this.loginbtn.Name = "loginbtn";
             this.loginbtn.Size = new System.Drawing.Size(145, 36);
-            this.loginbtn.TabIndex = 2;
+            this.loginbtn.TabIndex = 3;
             this.loginbtn.Text = "Login";
             this.loginbtn.UseVisualStyleBackColor = false;
             this.loginbtn.Click += new System.EventHandler(this.loginbtn_Click);
@@ -318,6 +333,7 @@
             this.accountnav.ResumeLayout(false);
             this.paneldrg.ResumeLayout(false);
             this.panview.ResumeLayout(false);
+            this.panview.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
@@ -346,6 +362,7 @@
         private Gradient grad1;
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.PictureBox pictureBox5;
+        private System.Windows.Forms.CheckBox togglepass;
     }
 }
 

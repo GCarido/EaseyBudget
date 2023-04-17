@@ -99,5 +99,29 @@ namespace EaseyBudget
             }
 
         }
+
+        private void togglepass_CheckedChanged(object sender, EventArgs e)
+        {
+            if (togglepass.Checked == true)
+            {
+                passwtxt.PasswordChar = false;
+            }
+            else
+            {
+                passwtxt.PasswordChar = true;
+            }
+        }
+
+        private void togglepass1_CheckedChanged(object sender, EventArgs e)
+        {
+            if (togglepass1.Checked == true)
+            {
+                confpasstxt.PasswordChar = false;
+            }
+            else
+            {
+                confpasstxt.PasswordChar = true;
+            }
+        }
     }
 }

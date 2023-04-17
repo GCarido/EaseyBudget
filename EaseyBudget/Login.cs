@@ -200,5 +200,17 @@ namespace EaseyBudget
         {
            
         }
+
+        private void togglepass_CheckedChanged(object sender, EventArgs e)
+        {
+            if(togglepass.Checked == true)
+            {
+                passtxt.PasswordChar = false;
+            }
+            else
+            {
+                passtxt.PasswordChar = true;
+            }
+        }
     }
 }

@@ -30,6 +30,8 @@
         {
             this.gradient1 = new EaseyBudget.Gradient();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.togglepass1 = new System.Windows.Forms.CheckBox();
+            this.togglepass = new System.Windows.Forms.CheckBox();
             this.clearbtn = new System.Windows.Forms.Button();
             this.registerbtn = new System.Windows.Forms.Button();
             this.confpasstxt = new CustomControls.RJControls.RJTextBox();
@@ -56,13 +58,15 @@
             this.gradient1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gradient1.Location = new System.Drawing.Point(0, 0);
             this.gradient1.Name = "gradient1";
-            this.gradient1.Size = new System.Drawing.Size(384, 461);
+            this.gradient1.Size = new System.Drawing.Size(384, 470);
             this.gradient1.TabIndex = 0;
             this.gradient1.TopColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(236)))), ((int)(((byte)(227)))));
             // 
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.Transparent;
+            this.panel4.Controls.Add(this.togglepass1);
+            this.panel4.Controls.Add(this.togglepass);
             this.panel4.Controls.Add(this.clearbtn);
             this.panel4.Controls.Add(this.registerbtn);
             this.panel4.Controls.Add(this.confpasstxt);
@@ -74,8 +78,34 @@
             this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel4.Location = new System.Drawing.Point(0, 94);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(384, 367);
+            this.panel4.Size = new System.Drawing.Size(384, 376);
             this.panel4.TabIndex = 80;
+            // 
+            // togglepass1
+            // 
+            this.togglepass1.AutoSize = true;
+            this.togglepass1.Font = new System.Drawing.Font("Montserrat", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.togglepass1.ForeColor = System.Drawing.Color.Blue;
+            this.togglepass1.Location = new System.Drawing.Point(70, 302);
+            this.togglepass1.Name = "togglepass1";
+            this.togglepass1.Size = new System.Drawing.Size(130, 20);
+            this.togglepass1.TabIndex = 9;
+            this.togglepass1.Text = "Show Password";
+            this.togglepass1.UseVisualStyleBackColor = true;
+            this.togglepass1.CheckedChanged += new System.EventHandler(this.togglepass1_CheckedChanged);
+            // 
+            // togglepass
+            // 
+            this.togglepass.AutoSize = true;
+            this.togglepass.Font = new System.Drawing.Font("Montserrat", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.togglepass.ForeColor = System.Drawing.Color.Blue;
+            this.togglepass.Location = new System.Drawing.Point(70, 232);
+            this.togglepass.Name = "togglepass";
+            this.togglepass.Size = new System.Drawing.Size(130, 20);
+            this.togglepass.TabIndex = 8;
+            this.togglepass.Text = "Show Password";
+            this.togglepass.UseVisualStyleBackColor = true;
+            this.togglepass.CheckedChanged += new System.EventHandler(this.togglepass_CheckedChanged);
             // 
             // clearbtn
             // 
@@ -83,7 +113,7 @@
             this.clearbtn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.clearbtn.Font = new System.Drawing.Font("Montserrat", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.clearbtn.ForeColor = System.Drawing.Color.Black;
-            this.clearbtn.Location = new System.Drawing.Point(200, 312);
+            this.clearbtn.Location = new System.Drawing.Point(200, 327);
             this.clearbtn.Name = "clearbtn";
             this.clearbtn.Size = new System.Drawing.Size(120, 36);
             this.clearbtn.TabIndex = 7;
@@ -97,7 +127,7 @@
             this.registerbtn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.registerbtn.Font = new System.Drawing.Font("Montserrat", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.registerbtn.ForeColor = System.Drawing.Color.Black;
-            this.registerbtn.Location = new System.Drawing.Point(72, 312);
+            this.registerbtn.Location = new System.Drawing.Point(72, 327);
             this.registerbtn.Name = "registerbtn";
             this.registerbtn.Size = new System.Drawing.Size(120, 36);
             this.registerbtn.TabIndex = 6;
@@ -114,7 +144,7 @@
             this.confpasstxt.BorderSize = 2;
             this.confpasstxt.Font = new System.Drawing.Font("Roboto", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.confpasstxt.ForeColor = System.Drawing.Color.Black;
-            this.confpasstxt.Location = new System.Drawing.Point(70, 260);
+            this.confpasstxt.Location = new System.Drawing.Point(70, 259);
             this.confpasstxt.Margin = new System.Windows.Forms.Padding(4);
             this.confpasstxt.Multiline = false;
             this.confpasstxt.Name = "confpasstxt";
@@ -136,7 +166,7 @@
             this.passwtxt.BorderSize = 2;
             this.passwtxt.Font = new System.Drawing.Font("Roboto", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.passwtxt.ForeColor = System.Drawing.Color.Black;
-            this.passwtxt.Location = new System.Drawing.Point(70, 210);
+            this.passwtxt.Location = new System.Drawing.Point(70, 189);
             this.passwtxt.Margin = new System.Windows.Forms.Padding(4);
             this.passwtxt.Multiline = false;
             this.passwtxt.Name = "passwtxt";
@@ -158,7 +188,7 @@
             this.userntxt.BorderSize = 2;
             this.userntxt.Font = new System.Drawing.Font("Roboto", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.userntxt.ForeColor = System.Drawing.Color.Black;
-            this.userntxt.Location = new System.Drawing.Point(70, 160);
+            this.userntxt.Location = new System.Drawing.Point(70, 141);
             this.userntxt.Margin = new System.Windows.Forms.Padding(4);
             this.userntxt.Multiline = false;
             this.userntxt.Name = "userntxt";
@@ -180,7 +210,7 @@
             this.emailtxt.BorderSize = 2;
             this.emailtxt.Font = new System.Drawing.Font("Roboto", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.emailtxt.ForeColor = System.Drawing.Color.Black;
-            this.emailtxt.Location = new System.Drawing.Point(70, 110);
+            this.emailtxt.Location = new System.Drawing.Point(70, 94);
             this.emailtxt.Margin = new System.Windows.Forms.Padding(4);
             this.emailtxt.Multiline = false;
             this.emailtxt.Name = "emailtxt";
@@ -202,7 +232,7 @@
             this.lastntext.BorderSize = 2;
             this.lastntext.Font = new System.Drawing.Font("Roboto", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lastntext.ForeColor = System.Drawing.Color.Black;
-            this.lastntext.Location = new System.Drawing.Point(70, 60);
+            this.lastntext.Location = new System.Drawing.Point(70, 47);
             this.lastntext.Margin = new System.Windows.Forms.Padding(4);
             this.lastntext.Multiline = false;
             this.lastntext.Name = "lastntext";
@@ -224,7 +254,7 @@
             this.firstntext.BorderSize = 2;
             this.firstntext.Font = new System.Drawing.Font("Roboto", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.firstntext.ForeColor = System.Drawing.Color.Black;
-            this.firstntext.Location = new System.Drawing.Point(70, 10);
+            this.firstntext.Location = new System.Drawing.Point(70, 4);
             this.firstntext.Margin = new System.Windows.Forms.Padding(4);
             this.firstntext.Multiline = false;
             this.firstntext.Name = "firstntext";
@@ -268,13 +298,14 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(384, 461);
+            this.ClientSize = new System.Drawing.Size(384, 470);
             this.Controls.Add(this.gradient1);
             this.Name = "SignUp";
             this.Text = "SignUp";
             this.Load += new System.EventHandler(this.SignUp_Load);
             this.gradient1.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
+            this.panel4.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -294,5 +325,7 @@
         private CustomControls.RJControls.RJTextBox lastntext;
         private CustomControls.RJControls.RJTextBox firstntext;
         private System.Windows.Forms.Button clearbtn;
+        private System.Windows.Forms.CheckBox togglepass1;
+        private System.Windows.Forms.CheckBox togglepass;
     }
 }
