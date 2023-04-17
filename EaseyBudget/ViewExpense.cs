@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using ClosedXML.Excel;
 using MySql.Data.MySqlClient;
 
 namespace EaseyBudget
@@ -215,12 +216,72 @@ namespace EaseyBudget
                         dgv1.Rows.RemoveAt(item.Index);
                     }
                     UploadData();
-                    select.Text = "";
-
+                    select.Text = "";               
                     Dashboard db = (Dashboard)Application.OpenForms["Dashboard"];
                     db.vexpbtn.PerformClick();
                     MessageBox.Show("Record has been successfully deleted.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
+            }
+        }
+
+        private void exportbtn_Click(object sender, EventArgs e)
+        {
+           using (SaveFileDialog save = new SaveFileDialog()
+            {
+
+                Filter = "Excel " +
+              "Workbook|*.xlsx"
+            }) 
+            {
+                if (save.ShowDialog() == DialogResult.OK)
+                {
+                    try
+                    {
+                        using (DataTable dtable = new DataTable("Expense Record"))
+                        {
+                            using (XLWorkbook wb = new XLWorkbook())
+                            {
+                                IXLWorksheet ws = wb.Worksheets.Add(this.sqldt);
+                                ws.Tables.First().InsertRowsAbove(1);
+                                ws.Range(ws.Cell(1, 1), ws.Cell(1, 8)).Merge();
+                                ws.Row(1).Cell(1).Value = $"Expense Record: User - {Login.Username}";
+
+                                var firstRow = ws.Range("A1:A1");
+                                firstRow.Style.Fill.BackgroundColor = XLColor.Yellow;
+                                firstRow.Style.Font.FontColor = XLColor.DarkBlue;
+                                firstRow.Style.Font.Bold = true;
+                                foreach (IXLCell cell in ws.Row(1).Cells())
+                                {
+                                    cell.Style.Alignment.Horizontal = XLAlignmentHorizontalValues.Center;
+                                }
+                                foreach (IXLCell cell in ws.Row(2).Cells())
+                                {
+                                    cell.Style.Alignment.Horizontal = XLAlignmentHorizontalValues.Center;
+                                }
+                                foreach (IXLTable table in ws.Tables)
+                                {
+                                    table.Theme = XLTableTheme.TableStyleMedium15;
+                                }
+                                foreach (IXLColumn column in ws.Columns())
+                                {
+                                    column.AdjustToContents();
+                                }
+                                wb.SaveAs(save.FileName);
+                            }
+                        }
+                        MessageBox.Show("You have successfully exported the " +
+                            "database table", "NOTICE", MessageBoxButtons.OK,
+                            MessageBoxIcon.Information);
+                    }
+                    catch (Exception ex)
+                    {
+                    }
+                    finally
+                    {
+                        Dashboard db = (Dashboard)Application.OpenForms["Dashboard"];
+                        db.vexpbtn.PerformClick();
+                    }
+                } 
             }
         }
     }

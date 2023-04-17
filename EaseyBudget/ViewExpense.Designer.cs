@@ -32,7 +32,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.topnav = new System.Windows.Forms.Panel();
             this.expsearch = new System.Windows.Forms.ComboBox();
-            this.searchbtn1 = new System.Windows.Forms.Button();
             this.timenav = new System.Windows.Forms.Panel();
             this.datenav = new System.Windows.Forms.Panel();
             this.lbldate = new System.Windows.Forms.Label();
@@ -47,6 +46,7 @@
             this.searchnavright = new System.Windows.Forms.Panel();
             this.searchnavleft = new System.Windows.Forms.Panel();
             this.searchbox = new System.Windows.Forms.TextBox();
+            this.searchbtn1 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.dbsection = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
@@ -55,6 +55,7 @@
             this.dbcell = new System.Windows.Forms.Panel();
             this.dgv1 = new System.Windows.Forms.DataGridView();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.exportbtn = new System.Windows.Forms.Button();
             this.delbtn = new System.Windows.Forms.Button();
             this.select = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -113,24 +114,6 @@
             this.expsearch.Size = new System.Drawing.Size(255, 33);
             this.expsearch.TabIndex = 4;
             this.expsearch.SelectedIndexChanged += new System.EventHandler(this.expsearch_SelectedIndexChanged);
-            // 
-            // searchbtn1
-            // 
-            this.searchbtn1.BackColor = System.Drawing.Color.Transparent;
-            this.searchbtn1.BackgroundImage = global::EaseyBudget.Properties.Resources.find1;
-            this.searchbtn1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.searchbtn1.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.searchbtn1.FlatAppearance.BorderSize = 0;
-            this.searchbtn1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.searchbtn1.Location = new System.Drawing.Point(385, 0);
-            this.searchbtn1.Name = "searchbtn1";
-            this.searchbtn1.Size = new System.Drawing.Size(34, 34);
-            this.searchbtn1.TabIndex = 2;
-            this.searchbtn1.UseVisualStyleBackColor = false;
-            this.searchbtn1.Click += new System.EventHandler(this.searchbtn_Click);
-            this.searchbtn1.MouseEnter += new System.EventHandler(this.searchbtn_MouseEnter);
-            this.searchbtn1.MouseLeave += new System.EventHandler(this.searchbtn_MouseLeave);
-            this.searchbtn1.MouseHover += new System.EventHandler(this.searchbtn_MouseHover);
             // 
             // timenav
             // 
@@ -273,6 +256,24 @@
             this.searchbox.Size = new System.Drawing.Size(296, 30);
             this.searchbox.TabIndex = 3;
             // 
+            // searchbtn1
+            // 
+            this.searchbtn1.BackColor = System.Drawing.Color.Transparent;
+            this.searchbtn1.BackgroundImage = global::EaseyBudget.Properties.Resources.find1;
+            this.searchbtn1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.searchbtn1.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.searchbtn1.FlatAppearance.BorderSize = 0;
+            this.searchbtn1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.searchbtn1.Location = new System.Drawing.Point(385, 0);
+            this.searchbtn1.Name = "searchbtn1";
+            this.searchbtn1.Size = new System.Drawing.Size(34, 34);
+            this.searchbtn1.TabIndex = 2;
+            this.searchbtn1.UseVisualStyleBackColor = false;
+            this.searchbtn1.Click += new System.EventHandler(this.searchbtn_Click);
+            this.searchbtn1.MouseEnter += new System.EventHandler(this.searchbtn_MouseEnter);
+            this.searchbtn1.MouseLeave += new System.EventHandler(this.searchbtn_MouseLeave);
+            this.searchbtn1.MouseHover += new System.EventHandler(this.searchbtn_MouseHover);
+            // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(236)))), ((int)(((byte)(227)))));
@@ -340,6 +341,7 @@
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.exportbtn);
             this.panel2.Controls.Add(this.delbtn);
             this.panel2.Controls.Add(this.select);
             this.panel2.Controls.Add(this.label2);
@@ -349,12 +351,24 @@
             this.panel2.Size = new System.Drawing.Size(814, 38);
             this.panel2.TabIndex = 2;
             // 
+            // exportbtn
+            // 
+            this.exportbtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.exportbtn.BackgroundImage = global::EaseyBudget.Properties.Resources.icons8_export_30;
+            this.exportbtn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.exportbtn.Location = new System.Drawing.Point(764, 6);
+            this.exportbtn.Name = "exportbtn";
+            this.exportbtn.Size = new System.Drawing.Size(30, 30);
+            this.exportbtn.TabIndex = 15;
+            this.exportbtn.UseVisualStyleBackColor = false;
+            this.exportbtn.Click += new System.EventHandler(this.exportbtn_Click);
+            // 
             // delbtn
             // 
             this.delbtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
             this.delbtn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.delbtn.Font = new System.Drawing.Font("Montserrat", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.delbtn.Location = new System.Drawing.Point(719, 11);
+            this.delbtn.Location = new System.Drawing.Point(684, 11);
             this.delbtn.Name = "delbtn";
             this.delbtn.Size = new System.Drawing.Size(75, 23);
             this.delbtn.TabIndex = 2;
@@ -368,7 +382,7 @@
             this.select.BackColor = System.Drawing.Color.Black;
             this.select.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.select.ForeColor = System.Drawing.Color.Yellow;
-            this.select.Location = new System.Drawing.Point(664, 14);
+            this.select.Location = new System.Drawing.Point(629, 14);
             this.select.Name = "select";
             this.select.Size = new System.Drawing.Size(49, 19);
             this.select.TabIndex = 1;
@@ -379,7 +393,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.Blue;
-            this.label2.Location = new System.Drawing.Point(570, 15);
+            this.label2.Location = new System.Drawing.Point(535, 15);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(96, 19);
             this.label2.TabIndex = 0;
@@ -458,5 +472,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox searchbox;
         private System.Windows.Forms.Button delbtn;
+        internal System.Windows.Forms.Button exportbtn;
     }
 }

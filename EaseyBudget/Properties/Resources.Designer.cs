@@ -193,6 +193,16 @@ namespace EaseyBudget.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_export_30 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-export-30", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap log1 {
             get {
                 object obj = ResourceManager.GetObject("log1", resourceCulture);
