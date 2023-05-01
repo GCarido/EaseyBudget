@@ -171,7 +171,7 @@ namespace EaseyBudget
                     UserID = user_id.ToString();
                     this.Hide();
                     Dashboard dashb = new Dashboard();
-                    dashb.Show();
+                    dashb.ShowDialog();
                 }
             
                 else
