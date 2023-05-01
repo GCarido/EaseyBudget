@@ -71,6 +71,20 @@
             this.dashbtn = new System.Windows.Forms.Button();
             this.logonav = new System.Windows.Forms.Panel();
             this.logo1 = new System.Windows.Forms.PictureBox();
+            this.userntext = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.currform = new System.Windows.Forms.Label();
+            this.formshow = new System.Windows.Forms.Panel();
+            this.usershow = new System.Windows.Forms.Panel();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.panel7 = new System.Windows.Forms.Panel();
+            this.panel8 = new System.Windows.Forms.Panel();
+            this.descdrag = new System.Windows.Forms.Label();
             this.paneldrg.SuspendLayout();
             this.formview.SuspendLayout();
             this.eventspan.SuspendLayout();
@@ -85,14 +99,24 @@
             this.btnav.SuspendLayout();
             this.logonav.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.logo1)).BeginInit();
+            this.formshow.SuspendLayout();
+            this.usershow.SuspendLayout();
+            this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
+            this.panel3.SuspendLayout();
+            this.panel4.SuspendLayout();
+            this.panel5.SuspendLayout();
+            this.panel6.SuspendLayout();
+            this.panel7.SuspendLayout();
+            this.panel8.SuspendLayout();
             this.SuspendLayout();
             // 
             // paneldrg
             // 
             this.paneldrg.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(236)))), ((int)(((byte)(227)))));
+            this.paneldrg.Controls.Add(this.descdrag);
             this.paneldrg.Controls.Add(this.exitbtn);
             this.paneldrg.Controls.Add(this.minbtn);
-            this.paneldrg.Controls.Add(this.label1);
             this.paneldrg.Dock = System.Windows.Forms.DockStyle.Top;
             this.paneldrg.Location = new System.Drawing.Point(231, 0);
             this.paneldrg.Name = "paneldrg";
@@ -135,12 +159,12 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Montserrat", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(16, 13);
+            this.label1.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(3, 12);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(575, 29);
+            this.label1.Size = new System.Drawing.Size(51, 19);
             this.label1.TabIndex = 0;
-            this.label1.Text = "EaseyBudget: Personal Finance Managing App";
+            this.label1.Text = "User:";
             this.label1.Click += new System.EventHandler(this.label1_Click);
             this.label1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.label1_MouseDown);
             // 
@@ -486,12 +510,14 @@
             // 
             // btnav
             // 
-            this.btnav.Controls.Add(this.vincbtn);
-            this.btnav.Controls.Add(this.vexpbtn);
-            this.btnav.Controls.Add(this.logoutbtn);
-            this.btnav.Controls.Add(this.incomebtn);
-            this.btnav.Controls.Add(this.expensebtn);
-            this.btnav.Controls.Add(this.dashbtn);
+            this.btnav.Controls.Add(this.formshow);
+            this.btnav.Controls.Add(this.usershow);
+            this.btnav.Controls.Add(this.panel6);
+            this.btnav.Controls.Add(this.panel5);
+            this.btnav.Controls.Add(this.panel4);
+            this.btnav.Controls.Add(this.panel3);
+            this.btnav.Controls.Add(this.panel2);
+            this.btnav.Controls.Add(this.panel1);
             this.btnav.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnav.Location = new System.Drawing.Point(0, 160);
             this.btnav.Name = "btnav";
@@ -501,14 +527,14 @@
             // vincbtn
             // 
             this.vincbtn.BackColor = System.Drawing.Color.Transparent;
-            this.vincbtn.Dock = System.Windows.Forms.DockStyle.Top;
+            this.vincbtn.Dock = System.Windows.Forms.DockStyle.Fill;
             this.vincbtn.FlatAppearance.BorderSize = 0;
             this.vincbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.vincbtn.Font = new System.Drawing.Font("Rockwell", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.vincbtn.Location = new System.Drawing.Point(0, 260);
+            this.vincbtn.Location = new System.Drawing.Point(0, 0);
             this.vincbtn.Name = "vincbtn";
             this.vincbtn.Size = new System.Drawing.Size(231, 65);
-            this.vincbtn.TabIndex = 5;
+            this.vincbtn.TabIndex = 4;
             this.vincbtn.Text = "View Income";
             this.vincbtn.UseVisualStyleBackColor = false;
             this.vincbtn.Click += new System.EventHandler(this.vincbtn_Click);
@@ -519,14 +545,14 @@
             // vexpbtn
             // 
             this.vexpbtn.BackColor = System.Drawing.Color.Transparent;
-            this.vexpbtn.Dock = System.Windows.Forms.DockStyle.Top;
+            this.vexpbtn.Dock = System.Windows.Forms.DockStyle.Fill;
             this.vexpbtn.FlatAppearance.BorderSize = 0;
             this.vexpbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.vexpbtn.Font = new System.Drawing.Font("Rockwell", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.vexpbtn.Location = new System.Drawing.Point(0, 195);
+            this.vexpbtn.Location = new System.Drawing.Point(0, 0);
             this.vexpbtn.Name = "vexpbtn";
             this.vexpbtn.Size = new System.Drawing.Size(231, 65);
-            this.vexpbtn.TabIndex = 4;
+            this.vexpbtn.TabIndex = 3;
             this.vexpbtn.Text = "View Expense";
             this.vexpbtn.UseVisualStyleBackColor = false;
             this.vexpbtn.Click += new System.EventHandler(this.vexpbtn_Click);
@@ -537,13 +563,13 @@
             // logoutbtn
             // 
             this.logoutbtn.BackColor = System.Drawing.Color.Transparent;
-            this.logoutbtn.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.logoutbtn.Dock = System.Windows.Forms.DockStyle.Fill;
             this.logoutbtn.FlatAppearance.BorderSize = 0;
             this.logoutbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.logoutbtn.Font = new System.Drawing.Font("Rockwell", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.logoutbtn.Location = new System.Drawing.Point(0, 396);
+            this.logoutbtn.Location = new System.Drawing.Point(0, 0);
             this.logoutbtn.Name = "logoutbtn";
-            this.logoutbtn.Size = new System.Drawing.Size(231, 65);
+            this.logoutbtn.Size = new System.Drawing.Size(231, 52);
             this.logoutbtn.TabIndex = 3;
             this.logoutbtn.Text = "Logout";
             this.logoutbtn.UseVisualStyleBackColor = false;
@@ -555,11 +581,11 @@
             // incomebtn
             // 
             this.incomebtn.BackColor = System.Drawing.Color.Transparent;
-            this.incomebtn.Dock = System.Windows.Forms.DockStyle.Top;
+            this.incomebtn.Dock = System.Windows.Forms.DockStyle.Fill;
             this.incomebtn.FlatAppearance.BorderSize = 0;
             this.incomebtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.incomebtn.Font = new System.Drawing.Font("Rockwell", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.incomebtn.Location = new System.Drawing.Point(0, 130);
+            this.incomebtn.Location = new System.Drawing.Point(0, 0);
             this.incomebtn.Name = "incomebtn";
             this.incomebtn.Size = new System.Drawing.Size(231, 65);
             this.incomebtn.TabIndex = 2;
@@ -573,11 +599,11 @@
             // expensebtn
             // 
             this.expensebtn.BackColor = System.Drawing.Color.Transparent;
-            this.expensebtn.Dock = System.Windows.Forms.DockStyle.Top;
+            this.expensebtn.Dock = System.Windows.Forms.DockStyle.Fill;
             this.expensebtn.FlatAppearance.BorderSize = 0;
             this.expensebtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.expensebtn.Font = new System.Drawing.Font("Rockwell", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.expensebtn.Location = new System.Drawing.Point(0, 65);
+            this.expensebtn.Location = new System.Drawing.Point(0, 0);
             this.expensebtn.Name = "expensebtn";
             this.expensebtn.Size = new System.Drawing.Size(231, 65);
             this.expensebtn.TabIndex = 1;
@@ -592,7 +618,7 @@
             // dashbtn
             // 
             this.dashbtn.BackColor = System.Drawing.Color.Transparent;
-            this.dashbtn.Dock = System.Windows.Forms.DockStyle.Top;
+            this.dashbtn.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dashbtn.FlatAppearance.BorderSize = 0;
             this.dashbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.dashbtn.Font = new System.Drawing.Font("Rockwell", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -627,6 +653,147 @@
             this.logo1.TabIndex = 0;
             this.logo1.TabStop = false;
             // 
+            // userntext
+            // 
+            this.userntext.AutoSize = true;
+            this.userntext.BackColor = System.Drawing.Color.Transparent;
+            this.userntext.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.userntext.ForeColor = System.Drawing.Color.Blue;
+            this.userntext.Location = new System.Drawing.Point(100, 13);
+            this.userntext.Name = "userntext";
+            this.userntext.Size = new System.Drawing.Size(87, 19);
+            this.userntext.TabIndex = 5;
+            this.userntext.Text = "userntext";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(3, 12);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(80, 19);
+            this.label5.TabIndex = 6;
+            this.label5.Text = "At Form:";
+            // 
+            // currform
+            // 
+            this.currform.AutoSize = true;
+            this.currform.BackColor = System.Drawing.Color.Transparent;
+            this.currform.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.currform.ForeColor = System.Drawing.Color.Blue;
+            this.currform.Location = new System.Drawing.Point(101, 13);
+            this.currform.Name = "currform";
+            this.currform.Size = new System.Drawing.Size(48, 19);
+            this.currform.TabIndex = 7;
+            this.currform.Text = "form";
+            // 
+            // formshow
+            // 
+            this.formshow.BackColor = System.Drawing.Color.White;
+            this.formshow.Controls.Add(this.currform);
+            this.formshow.Controls.Add(this.panel8);
+            this.formshow.Dock = System.Windows.Forms.DockStyle.Top;
+            this.formshow.Location = new System.Drawing.Point(0, 44);
+            this.formshow.Name = "formshow";
+            this.formshow.Size = new System.Drawing.Size(231, 44);
+            this.formshow.TabIndex = 6;
+            // 
+            // usershow
+            // 
+            this.usershow.BackColor = System.Drawing.Color.White;
+            this.usershow.Controls.Add(this.panel7);
+            this.usershow.Controls.Add(this.userntext);
+            this.usershow.Dock = System.Windows.Forms.DockStyle.Top;
+            this.usershow.Location = new System.Drawing.Point(0, 0);
+            this.usershow.Name = "usershow";
+            this.usershow.Size = new System.Drawing.Size(231, 44);
+            this.usershow.TabIndex = 7;
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.logoutbtn);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel1.Location = new System.Drawing.Point(0, 409);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(231, 52);
+            this.panel1.TabIndex = 0;
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.vincbtn);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel2.Location = new System.Drawing.Point(0, 344);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(231, 65);
+            this.panel2.TabIndex = 1;
+            // 
+            // panel3
+            // 
+            this.panel3.Controls.Add(this.vexpbtn);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel3.Location = new System.Drawing.Point(0, 279);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(231, 65);
+            this.panel3.TabIndex = 2;
+            // 
+            // panel4
+            // 
+            this.panel4.Controls.Add(this.incomebtn);
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel4.Location = new System.Drawing.Point(0, 214);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(231, 65);
+            this.panel4.TabIndex = 3;
+            // 
+            // panel5
+            // 
+            this.panel5.Controls.Add(this.expensebtn);
+            this.panel5.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel5.Location = new System.Drawing.Point(0, 149);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(231, 65);
+            this.panel5.TabIndex = 4;
+            // 
+            // panel6
+            // 
+            this.panel6.Controls.Add(this.dashbtn);
+            this.panel6.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel6.Location = new System.Drawing.Point(0, 84);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(231, 65);
+            this.panel6.TabIndex = 5;
+            // 
+            // panel7
+            // 
+            this.panel7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.panel7.Controls.Add(this.label1);
+            this.panel7.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel7.Location = new System.Drawing.Point(0, 0);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(95, 44);
+            this.panel7.TabIndex = 6;
+            // 
+            // panel8
+            // 
+            this.panel8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.panel8.Controls.Add(this.label5);
+            this.panel8.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel8.Location = new System.Drawing.Point(0, 0);
+            this.panel8.Name = "panel8";
+            this.panel8.Size = new System.Drawing.Size(95, 44);
+            this.panel8.TabIndex = 8;
+            // 
+            // descdrag
+            // 
+            this.descdrag.AutoSize = true;
+            this.descdrag.Font = new System.Drawing.Font("Montserrat", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.descdrag.Location = new System.Drawing.Point(13, 15);
+            this.descdrag.Name = "descdrag";
+            this.descdrag.Size = new System.Drawing.Size(653, 25);
+            this.descdrag.TabIndex = 4;
+            this.descdrag.Text = "EaseyBudget: Your Personal Finance Managing Desktop App";
+            this.descdrag.MouseDown += new System.Windows.Forms.MouseEventHandler(this.descdrag_MouseDown);
+            // 
             // Dashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -660,6 +827,20 @@
             this.btnav.ResumeLayout(false);
             this.logonav.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.logo1)).EndInit();
+            this.formshow.ResumeLayout(false);
+            this.formshow.PerformLayout();
+            this.usershow.ResumeLayout(false);
+            this.usershow.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
+            this.panel3.ResumeLayout(false);
+            this.panel4.ResumeLayout(false);
+            this.panel5.ResumeLayout(false);
+            this.panel6.ResumeLayout(false);
+            this.panel7.ResumeLayout(false);
+            this.panel7.PerformLayout();
+            this.panel8.ResumeLayout(false);
+            this.panel8.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -709,5 +890,19 @@
         private System.Windows.Forms.WebBrowser newsweb;
         internal System.Windows.Forms.Button vincbtn;
         internal System.Windows.Forms.Button vexpbtn;
+        private System.Windows.Forms.Label userntext;
+        private System.Windows.Forms.Label currform;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Panel formshow;
+        private System.Windows.Forms.Panel usershow;
+        private System.Windows.Forms.Panel panel6;
+        private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panel8;
+        private System.Windows.Forms.Panel panel7;
+        private System.Windows.Forms.Label descdrag;
     }
 }

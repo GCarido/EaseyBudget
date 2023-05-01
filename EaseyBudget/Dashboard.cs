@@ -40,7 +40,8 @@ namespace EaseyBudget
         private void Dashboard_Load(object sender, EventArgs e)
         {
             this.ControlBox = false;
-
+            userntext.Text = Login.Username;
+            currform.Text = "Dashboard";
             newsweb.ScriptErrorsSuppressed = true;
             newsweb.Navigate("https://news.abs-cbn.com/");
             eventsweb.ScriptErrorsSuppressed = true;
@@ -258,6 +259,7 @@ namespace EaseyBudget
 
         private void expensebtn_Click(object sender, EventArgs e)
         {
+            currform.Text = "Expense";
             Expense exp = new Expense();
             exp.TopLevel = false;
             formview.Controls.Add(exp);
@@ -270,12 +272,14 @@ namespace EaseyBudget
         private void dashbtn_Click(object sender, EventArgs e)
         {
             this.Hide();
+            currform.Text = "Dashboard";
             Dashboard dashb = new Dashboard();
             dashb.Show();
         }
 
         private void incomebtn_Click(object sender, EventArgs e)
         {
+            currform.Text = "Income";
             Income inc = new Income();
             inc.TopLevel = false;
             formview.Controls.Add(inc);
@@ -338,6 +342,7 @@ namespace EaseyBudget
 
         public void vexpbtn_Click(object sender, EventArgs e)
         {
+            currform.Text = "View Expense";
             ViewExpense vexp = new ViewExpense();
             vexp.TopLevel = false;
             formview.Controls.Add(vexp);
@@ -349,6 +354,7 @@ namespace EaseyBudget
 
         private void vincbtn_Click(object sender, EventArgs e)
         {
+            currform.Text = "View Income";
             ViewIncome vinc = new ViewIncome();
             vinc.TopLevel = false;
             formview.Controls.Add(vinc);
@@ -397,6 +403,12 @@ namespace EaseyBudget
             {
                 newsweb.Navigate("https://www.philstar.com/");
             }
+        }
+
+        private void descdrag_MouseDown(object sender, MouseEventArgs e)
+        {
+            ReleaseCapture();
+            SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
     }
 }
