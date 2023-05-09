@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.proceedbtn = new System.Windows.Forms.Button();
+            this.clearbtn = new System.Windows.Forms.Button();
             this.searchbtn = new System.Windows.Forms.Button();
             this.locoftrans = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -42,12 +44,11 @@
             this.label1 = new System.Windows.Forms.Label();
             this.gmappanel = new System.Windows.Forms.Panel();
             this.gmapbg = new System.Windows.Forms.PictureBox();
-            this.googleweb = new System.Windows.Forms.WebBrowser();
-            this.proceedbtn = new System.Windows.Forms.Button();
-            this.clearbtn = new System.Windows.Forms.Button();
+            this.microsoftweb = new Microsoft.Web.WebView2.WinForms.WebView2();
             this.groupBox1.SuspendLayout();
             this.gmappanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gmapbg)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.microsoftweb)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -74,6 +75,32 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Expense Details";
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
+            // 
+            // proceedbtn
+            // 
+            this.proceedbtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
+            this.proceedbtn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.proceedbtn.Font = new System.Drawing.Font("Roboto", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.proceedbtn.Location = new System.Drawing.Point(12, 502);
+            this.proceedbtn.Name = "proceedbtn";
+            this.proceedbtn.Size = new System.Drawing.Size(79, 23);
+            this.proceedbtn.TabIndex = 0;
+            this.proceedbtn.Text = "Proceed";
+            this.proceedbtn.UseVisualStyleBackColor = false;
+            this.proceedbtn.Click += new System.EventHandler(this.proceedbtn_Click);
+            // 
+            // clearbtn
+            // 
+            this.clearbtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.clearbtn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.clearbtn.Font = new System.Drawing.Font("Roboto", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.clearbtn.Location = new System.Drawing.Point(96, 502);
+            this.clearbtn.Name = "clearbtn";
+            this.clearbtn.Size = new System.Drawing.Size(79, 23);
+            this.clearbtn.TabIndex = 10;
+            this.clearbtn.Text = "Clear";
+            this.clearbtn.UseVisualStyleBackColor = false;
+            this.clearbtn.Click += new System.EventHandler(this.clearbtn_Click);
             // 
             // searchbtn
             // 
@@ -195,7 +222,7 @@
             // 
             this.gmappanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(236)))), ((int)(((byte)(227)))));
             this.gmappanel.Controls.Add(this.gmapbg);
-            this.gmappanel.Controls.Add(this.googleweb);
+            this.gmappanel.Controls.Add(this.microsoftweb);
             this.gmappanel.Location = new System.Drawing.Point(312, 8);
             this.gmappanel.Name = "gmappanel";
             this.gmappanel.Size = new System.Drawing.Size(485, 530);
@@ -212,40 +239,17 @@
             this.gmapbg.TabIndex = 1;
             this.gmapbg.TabStop = false;
             // 
-            // googleweb
+            // microsoftweb
             // 
-            this.googleweb.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.googleweb.Location = new System.Drawing.Point(0, 0);
-            this.googleweb.MinimumSize = new System.Drawing.Size(20, 20);
-            this.googleweb.Name = "googleweb";
-            this.googleweb.Size = new System.Drawing.Size(485, 530);
-            this.googleweb.TabIndex = 0;
-            // 
-            // proceedbtn
-            // 
-            this.proceedbtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
-            this.proceedbtn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.proceedbtn.Font = new System.Drawing.Font("Roboto", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.proceedbtn.Location = new System.Drawing.Point(12, 502);
-            this.proceedbtn.Name = "proceedbtn";
-            this.proceedbtn.Size = new System.Drawing.Size(79, 23);
-            this.proceedbtn.TabIndex = 0;
-            this.proceedbtn.Text = "Proceed";
-            this.proceedbtn.UseVisualStyleBackColor = false;
-            this.proceedbtn.Click += new System.EventHandler(this.proceedbtn_Click);
-            // 
-            // clearbtn
-            // 
-            this.clearbtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.clearbtn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.clearbtn.Font = new System.Drawing.Font("Roboto", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.clearbtn.Location = new System.Drawing.Point(96, 502);
-            this.clearbtn.Name = "clearbtn";
-            this.clearbtn.Size = new System.Drawing.Size(79, 23);
-            this.clearbtn.TabIndex = 10;
-            this.clearbtn.Text = "Clear";
-            this.clearbtn.UseVisualStyleBackColor = false;
-            this.clearbtn.Click += new System.EventHandler(this.clearbtn_Click);
+            this.microsoftweb.AllowExternalDrop = true;
+            this.microsoftweb.CreationProperties = null;
+            this.microsoftweb.DefaultBackgroundColor = System.Drawing.Color.White;
+            this.microsoftweb.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.microsoftweb.Location = new System.Drawing.Point(0, 0);
+            this.microsoftweb.Name = "microsoftweb";
+            this.microsoftweb.Size = new System.Drawing.Size(485, 530);
+            this.microsoftweb.TabIndex = 0;
+            this.microsoftweb.ZoomFactor = 1D;
             // 
             // Expense
             // 
@@ -262,6 +266,7 @@
             this.groupBox1.PerformLayout();
             this.gmappanel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gmapbg)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.microsoftweb)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -282,8 +287,8 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Panel gmappanel;
         private System.Windows.Forms.Button proceedbtn;
-        private System.Windows.Forms.WebBrowser googleweb;
         private System.Windows.Forms.PictureBox gmapbg;
         private System.Windows.Forms.Button clearbtn;
+        private Microsoft.Web.WebView2.WinForms.WebView2 microsoftweb;
     }
 }

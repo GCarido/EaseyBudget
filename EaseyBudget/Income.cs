@@ -59,34 +59,16 @@ namespace EaseyBudget
             
         }
 
-        private void searchbtn_Click(object sender, EventArgs e)
+        private async Task initizated()
         {
-            try
-            {
-                gmapbg1.SendToBack();
-                googleweb.ScriptErrorsSuppressed = true;
-                googleweb.Navigate("about:blank");
+            await microsoftweb.EnsureCoreWebView2Async(null);
+        }
 
-                RegistryKey regKey = Registry.CurrentUser;
-                regKey = regKey.CreateSubKey(@"Software\Microsoft\Internet Explorer\Main\FeatureControl\FEATURE_BROWSER_EMULATION", RegistryKeyPermissionCheck.ReadWriteSubTree);
-
-                regKey.SetValue(System.Diagnostics.Process.GetCurrentProcess().ProcessName + ".exe", 11001, RegistryValueKind.DWord);
-                regKey.Close();
-
-                string loc = locoftrans.Text;
-                StringBuilder queryaddress = new StringBuilder();
-                queryaddress.Append("http://google.com/maps?q=");
-
-                if (loc != string.Empty)
-                {
-                    queryaddress.Append(loc);
-                }
-                googleweb.Navigate(queryaddress.ToString());
-            }
-            catch (Exception ex)
-            {
-                //EXCEPTION
-            }
+        private async void searchbtn_Click(object sender, EventArgs e)
+        {
+            gmapbg1.SendToBack();
+            await initizated();
+            microsoftweb.CoreWebView2.Navigate($"http://google.com/maps?q={locoftrans.Text}");
         }
 
         private void proceedbtn_Click(object sender, EventArgs e)
