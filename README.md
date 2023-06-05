@@ -1,2 +1,2 @@
-# Organization Management System
-Summer Term project 2021-2022
+# Personal Finance Managing App (Desktop) - EaseyBudget
+Second Semester Project 2022 - 2023
